@@ -1,0 +1,11 @@
+{
+    "name": "MVC",
+    "files": [
+      "../../images/MVC-Process_With_Jade.svg",
+      "model.js",
+      "../../../publicViews/person.jade",
+      "controller.js"
+
+    ]
+
+}

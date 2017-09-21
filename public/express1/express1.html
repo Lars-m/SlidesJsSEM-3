@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Node- Getting Started</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.13/angular.min.js"></script>-->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" media="all" href="../theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="../theme/css/phone.css">
+  <script src="../angular/angular.min.js"></script>
+  <!--<script src="https://code.angularjs.org/1.2.18/i18n/angular-locale_da.js"></script>-->
+
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="../js/presenter.js"></script>
+
+  <base target="_blank">
+
+  <!-- This opens all links in a new tab. -->
+  <script data-main="../js/slides" src="../js/require-1.0.8.min.js"></script>
+  <script src="slides.js"></script>
+
+</head>
+
+<!--Setup Angular for the full slide-set-->
+<!--<body ng-app="SlideApp" style="opacity: 0">-->
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+
+  <slide class="title-slide segue nobackground" style="background: #00163B">
+    <aside class="gdbar"><img src="../images/logo.png" style="width: 200px;"></aside>
+    <hgroup class="autofadein" style="color: white;">
+      <div style="float: left">
+        <h1 data-config-title style="float:left;"></h1>
+
+        <h2 data-config-subtitle></h2>
+
+        <p data-config-presenter></p>
+
+      </div>
+      <div style="float:left;margin-left: 2em;"><img src="images/imgres.jpg" style="float:left"></div>
+      <!--<div style="float:left;margin-left: 2em;"><img src="images/node_logo.png" style="float:left"></div>-->
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Express</h2>
+    </hgroup>
+    <article>
+      <p>Express is a minimal and flexible Node.js web application framework that provides a robust set of
+        features for web and mobile applications</p>
+      <ul class="build">
+        <li>
+          Express is minimal because it does not come loaded with all sorts of functionality.
+          Out of the box, it supports only the very basic features of a web framework.
+        </li>
+        <li>
+          Even the supported features are not all enabled by default, you have the option to pick and use,
+          according to your needs.
+        </li>
+        <li>
+          The flexibility in Express comes from the use of middlewares and Node modules.
+          Express middlewares and Node modules are pluggable JavaScript components,
+          which make Express apps very modular, flexible, and extensible.
+        </li>
+        <li>Express gives you complete access to the core Node APIs. Anything you can do with Node, you can do it
+          with Express too.
+          Express can be used to create very simple to very complex web apps.
+        </li>
+
+      </ul>
+    </article>
+
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2>The Story of Express</h2>
+
+    </hgroup>
+    <article>
+      <div class="row" style="margin-top: -35px;">
+        <div class="col-md-2" style="margin-top:3px;">
+          February 2009
+        </div>
+        <div class="col-md-10" style="margin-top:3px;">
+          Node.js (Node) v0.0.1 is released
+        </div>
+      </div>
+      <div class="row" style="margin-top: -35px;">
+        <div class="col-md-2"></div>
+        <div class="col-md-10">
+          <p class="smaller" style="color:#3071a9">Node provided a simple Web-server API, but it was too low
+            level, and you had to write and re-write
+            many of the web server functions in your web apps.
+            Modularity and extensibility became a problem</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2" style="margin-top:3px;">
+          June 2009
+        </div>
+        <div class="col-md-10" style="margin-top:3px;">
+          Express v0.0.1 is released.
+          <p class="smaller" style="color:#3071a9"> Almost the only thing in common with that version, and
+            Express as we know it today, is the name.
+            Express was built on top of Node's web server API</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2" style="margin-top:3px;">
+          June 2010
+        </div>
+        <div class="col-md-10" style="margin-top:3px;">
+          The Connect project is started
+          <p class="smaller" style="color:#3071a9">The project was started to solve the modularity and
+            extensibility issue in the Node web server API.
+            Like Express, Connect was built on top of Node's web server API, and came with a middleware
+            system, which allowed
+            small re-usable programs to be plugged onto it to handle HTTP-specific functionalities.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2" style="margin-top:3px;">
+          June 2010
+        </div>
+        <div class="col-md-10" style="margin-top:3px;">
+          Express v1.0.0
+          <p class="smaller" style="color:#3071a9">
+            By now, there were two different web development frameworks for Node: Express and Connect—one.
+            It was however obviously that they were actually complementary frameworks.
+            So, in July 2010, it was decided to re-architect Express to run on top of Connect, effectively
+            merging Connect with Express to create
+            a new incarnation of Express in v1.0.0.</p>
+        </div>
+      </div>
+      <footer class="source"> Hage Yaapa, Express Web Application Development/</footer>
+
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>The Story of Express - 2</h2>
+    </hgroup>
+    <article>
+      <div>
+        <p>Express v1.0.0 was Connect with additional functionalities built on top of it.</p>
+
+        <p>To this day it remains the same—Express continues to use the
+          Connect middleware, and any change in Connect is invariably reflected in Express.</p>
+
+        <p>As an Express developer, you might rarely deal with Connect directly, but you will
+          be using a lot of middlewares in your projects. Middlewares in Express are referred
+          to as Express middlewares and not Connect middlewares, although technically they
+          are Connect middlewares.
+        </p>
+      </div>
+      <footer class="source"> Hage Yaapa, Express Web Application Development/</footer>
+
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Installing Express</h2>
+    </hgroup>
+    <article>
+      <p style="margin-top: -20px;">Install the Express-generator: <code>npm install express-generator -g</code> </p>
+
+      <div class="row small">
+        <div class="col-md-3">
+          <p style="color: #000088">Creating an Express project manually</p>
+        </div>
+        <div class="col-md-9">
+          <ul>
+            <li>
+              Create a folder somewhere on your system to hold you app, and open a command prompt in that folder
+            </li>
+            <li>
+              Do a <code>npm init</code> (for this demo select defaults for everything)
+            </li>
+            <li>
+              Open the generated package.json file and investigate the content
+            </li>
+            <li>
+              Do a <code>npn install express --save</code> (check you folder to see what you got, and also open
+              package.json again)
+            </li>
+            <li>
+              Add a file <em>index.js</em> (name declared in your package.json file) and add a minimalistic server as sketched here
+              <a href="http://expressjs.com/en/starter/hello-world.html">Hello World</a>
+            </li>
+            <li>
+              Start the server like: <code>npm start</code>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="row small">
+        <div class="col-md-3">
+          <p style="color: #000088">Creating an Express project with the Express Generator</p>
+          <p><a href="http://expressjs.com/en/starter/generator.html">Express-generator</a></p>
+        </div>
+        <div class="col-md-9">
+          <ul>
+            <li>
+              Open a cmd-prompt and navigate to the folder where you wan't to place your project folder.
+            </li>
+            <li>
+              Do a <code>express myExpressApp </code> Investigate the generated folder(s) and the <em>node_modules</em> folder
+            </li>
+            <li>
+              Do a <code>npm install </code> Investigate the <em>node_modules</em> folder
+            </li>
+            <li>
+              Start the server like this: <code>set DEBUG=myapp:* & npm start</code><br/>
+              Or on Mac/linux: <code>DEBUG=myapp:* npm start</code>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Express Projects in WebStorm</h2>
+    </hgroup>
+    <article>
+      <p style="margin-top: -15px;">WebStorm uses the Express-generator to create a "Node.js Express app".
+        So you can either do the steps from the previous slide (Creating an Express project with the Express-generator") and open the project in WebStorm or use WebStorms new project wizard </p>
+      <p>If you use the WebStorm Wizard you will be prompted for a <em>Template engine</em> and the <em>CSS preprocessor</em> to use. We will go in detail with some of the template engines, but not CSS.
+        For now just select the defaults</p>
+      <p>One utility tool you simply can't live without is <a href="http://nodemon.io/">nodemon</a>.
+        It will monitor for any changes in your source and automatically restart your server while you develop.</p>
+      <p>Install it like: <code>npm install -g nodemon</code>.
+       You might have to Google for how to use it from within WebStorm for you particular OS. This is how I have set it up on Windows:</p>
+      <img src="images/nodemon_express.JPG">
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>A Minimal Express Application</h2>
+    </hgroup>
+    <article>
+      <p style="margin-top: -25px;">There are only <span style="text-decoration: underline">three core components</span>
+        to an Express application, which makes it
+        easy get started</p>
+           <pre class="prettyprint">
+var express = require('express');
+var <b>app</b> = express();
+
+app.get('/', function(<b>req</b>, <b>res</b>){
+  res.send('hello world');
+});
+app.listen(3000); </pre>
+      <p style="color: #000088;font-weight: bold">The Core Express Objects</p>
+      <div class="small">
+        <div class="row" style="margin-bottom: 0.6em;">
+          <div class="col-md-3" style="font-size: 0.9em;"><a href="http://expressjs.com/4x/api.html#application">The
+            Application Object</a></div>
+          <div class="smaller col-md-9">
+            The <em>Application</em> object is an instance of Express, by convention represented by the
+            variable named <em>app</em>. It is the main object of an Express app and the bulk of the
+            functionality is built on it
+          </div>
+        </div>
+        <div class="row" style="margin-bottom: 0.6em;">
+          <div class="col-md-3" style="font-size: 0.9em;"><a href="http://expressjs.com/4x/api.html#request">The
+            Request Object</a></div>
+
+          <div class="smaller col-md-9">
+            The HTTP <em>request</em> object is created when a client makes a request to the Express app
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3" style="font-size: 0.9em;"><a href="http://expressjs.com/4x/api.html#response">The
+            Response Object</a></div>
+
+          <div class="smaller col-md-9">
+            The HTTP <em>response</em> object is created along with the request object
+          </div>
+        </div>
+      </div>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Middleware</h2>
+    </hgroup>
+    <article>
+
+      <p>An Express application is essentially a stack of middleware which are executed in a
+        pipeline (serially).</p>
+
+      <div class="build">
+        <p>A middleware is a function with access to the <em>request object</em> (req), the <em>response object
+          (res)</em>, and the <em>next</em> middleware in line
+          in the request-response cycle of an Express application.</p>
+
+        <p>
+          Each middleware has the capacity to execute any code, make changes to the request and the reponse
+          object,
+          end the request-response cycle, and call the next middleware in the stack.
+          <b>Since middleware are executed serially, their order of inclusion is important.</b></p>
+
+        <p>
+          If the current middleware is not ending the request-response cycle,
+          <b>it is important to call <em>next()</em> to pass
+            on the control to the next middleware,
+            else the request will be left hanging.</b>
+        </p>
+      </div>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Middleware</h2>
+
+      <h3>Request Flow</h3>
+    </hgroup>
+    <article>
+      <p style="margin-top: -30px;">In an Express Application there is a single entry point for all the requests
+        coming to the app—via app.js
+        When an HTTP request arrives at our app, it goes through the stack of middlewares as sketched below.
+      </p>
+      <img src="images/ExpressMiddlewareStack.PNG" style="text-align: center">
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Middleware</h2>
+
+      <h3>Middlewares and Request Flow</h3>
+    </hgroup>
+    <article>
+        <pre class="prettyprint pre16" style="margin-top: -35px;float: left">
+ <b>//Third-party middleware</b>
+ app.use(bodyParser.urlencoded())
+
+ <b>//Custom middleware</b>
+   app.use(function (req, res, next) {
+   console.log('Time:', Date.now()+"Log all requests");
+   next();
+ });
+
+ <b>//Route functions</b>
+ app.<b>all</b>('/somePath',function(req,res){
+   console.log("Log on all request for /somePath (GET,POST, PUT, DELETE)")
+ })
+ app.<b>get</b>('/somePath', function(req, res){
+   res.send('This is a route');
+ });
+ app.<b>post</b>('/somePath', function(req, res){
+   //.. Do something with the request parameters
+ });
+
+ <b>//Built-in middleware (the only one left in V4.x.x)</b>
+ app.use(express.static('./public')); </pre>
+      <div style="float:left;margin-left: 25px;">
+        <div style="">Request Flow</div>
+        <img src="images/Arrow_down.png" style="width:100px;margin-top: 20px;">
+      </div>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Middleware Demo</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src="../images/Demo.png"/>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Express and Sessions</h2>
+
+      <h3>Remember: HTTP is Stateless Protocol </h3>
+    </hgroup>
+    <article>
+      <p style="margin-top: -30px;">HTTP is stateless. Each request for a Web page or URL results in the requested pages
+        being served,
+        but without the Web (HTTP) server remembering the request later.
+        In other words, there is no recorded continuity. Each communication is discrete and unrelated to those that
+        precede or follow
+      </p>
+      <img src="images/session1.PNG" style="margin-left: 200px;"/>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Express and Sessions 2</h2>
+
+      <h3>Remember: HTTP is Stateless Protocol </h3>
+    </hgroup>
+    <article>
+      <p>Server side technologies can implement state or server side sessions
+        using one or more of the following methods:
+      </p>
+      <ul>
+        <li>HTTP cookies.</li>
+        <li>Query string parameters, for example: /index.php?session_id=some_unique_session_code.</li>
+        <li>Hidden variables within web forms</li>
+      </ul>
+
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Express and Sessions 3</h2>
+
+      <h3>Session Cookies </h3>
+    </hgroup>
+    <article>
+      <p style="margin-top: -30px;">A user's session for a website exists in temporary memory only while the user is
+        reading and navigating the website.
+        Web browsers normally delete session cookies when the user closes the browser.
+
+      </p>
+      <img src="images/sessionCookie.PNG" style="margin-left: 200px; width:40%"/>
+    </article>
+  </slide>
+
+
+  <slide>
+    <script>
+      $(document).ready(function () {
+        $("#sessions").exPresenter({
+          directory: "examples/session/",
+          codeClass: "prettyprint pre14",
+          codeStyle: "float:left;margin-right:5px;margin-bottom:5px;width:100%;background-color:white",
+          presenterStyle: "display:none",
+          commentStyle: "position:absolute;left:60px; top:500px;width:1000px;font-size:22px;",
+          imageStyle: "width:60%;",
+          imageTitle: "MVC"
+        });
+      });
+    </script>
+    <hgroup>
+      <h2>Express and Sessions 4</h2>
+
+      <h3>Using sessions with Express requires (big surprise) some middleware</h3>
+    </hgroup>
+    </hgroup>
+    <article>
+      <div id="sessions" style="float: left;width:72%;margin-top: -30px;"></div>
+      <div style="margin-top:20px;margin-left:35px;width:22%;float:left;">
+        <p>Views from this Route</p>
+        <iframe src="/session" style=height:200px;float:left;background-color:#e6e6e6"></iframe>
+        <p class="smaller" style="color:#000066">Test this, and verify (Refresh) that you each have your own <em>session</em>
+          object (check with the guy next to you)</p>
+      </div>
+    </article>
+  </slide>
+
+
+  <style>
+    .scaled_iframe {
+      width: 1200px;
+      -moz-transform: scale(0.85, 0.85);
+      -webkit-transform: scale(0.85, 0.85);
+      -o-transform: scale(0.85, 0.85);
+      -ms-transform: scale(0.85, 0.85);
+      transform: scale(0.85, 0.85);
+      -moz-transform-origin: top left;
+      -webkit-transform-origin: top left;
+      -o-transform-origin: top left;
+      -ms-transform-origin: top left;
+      transform-origin: top left;
+    }
+
+  </style>
+
+
+  <slide>
+    <hgroup>
+
+      <h2>Web Template Systems</h2>
+    </hgroup>
+    <article>
+      <div class="row" style="margin-top: -20px;">
+        <div class="col-md-9">
+          <p>A web template system uses a template processor to combine web templates to form finished web pages,
+            possibly using some data source to customize the pages or present a large amount of content on
+            similar-looking pages.</p>
+
+          <div>
+            <div class="build">
+              <div>
+                <p class="smaller" style="color: #000066">Overall, there are five types of templating
+                  systems,
+                  classified based on when
+                  assembly happens -
+                  (When placeholders are substituted for variable information) </p>
+                <ul style="color: #000066">
+                  <li><p class="smaller">Server-side - run-time substitution happens on the web server
+                    </br><b> Our focus for this Period</b></p></li>
+                  <li><p class="smaller">Client-side - run-time substitution happens in the web
+                    browser</p></li>
+                  <div style="color: gray">
+                    <li><p class="smaller">Edge-side - run-time substitution happens on a proxy between
+                      web server
+                      and
+                      browser</p></li>
+                    <li><p class="smaller">Outside server - static web pages are produced offline and
+                      uploaded to
+                      the
+                      web server;</p></li>
+                    <li><p class="smaller">Distributed - run-time substitution happens on multiple
+                      servers</p></li>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3"><img src="images/templating.jpg" style="margin-top:40px;width:100%"/></div>
+      </div>
+      <footer class="source"> http://en.wikipedia.org/wiki/Web_template_system</footer>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Express and Templating</h2>
+    </hgroup>
+    <article>
+      <p>As we have seen, Express ships out of the box, in an absolute minimum configuration.
+        So in order to use a template engine we must first install it</p>
+
+      <div class="build">
+        <p>In order to install one, we must first select one to use?
+          <a href="http://garann.github.io/template-chooser/">Template Engines</a>???
+        </p>
+
+        <div>
+          <p>It seems like, judging by the use in literature and tutorials, that the following are widely
+            used:</p>
+          <ul>
+            <li>Jade</li>
+            <li>EJS (Embedded JavaScript</li>
+            <li>Handlebars</li>
+          </ul>
+          <p>We will introduce all three, but place focus on <b></B>Jade</b>  and <b>Handlebars (my preference)</b></p>
+        </div>
+      </div>
+    </article>
+  </slide>
+
+
+  <slide>
+    <article>
+      <iframe data-src="http://jade-lang.com/" class="scaled_iframe" style="height: 700px;"></iframe>
+      <footer class="source"><a href="http://jade-lang.com/">Jade</a></footer>
+    </article>
+  </slide>
+
+  <slide>
+    <article>
+      <iframe data-src="http://handlebarsjs.com/" class="scaled_iframe" style="height: 700px;"></iframe>
+      <footer class="source"><a href="http://handlebarsjs.com/">Handlebars</a></footer>
+    </article>
+  </slide>
+
+  <slide>
+    <article>
+      <iframe src="http://www.embeddedjs.com/" class="scaled_iframe" style="height: 700px;"></iframe>
+      <footer class="source"><a href="http://www.embeddedjs.com/">EJS</a></footer>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Templating Demo</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src="../images/Demo.png"/>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Separating Concerns</h2>
+
+      <h3>The MVC Pattern</h3>
+    </hgroup>
+    <article>
+      <p class="smaller" style="color: #000066;margin-top: -40px;">The traditional MVC pattern (and similar patterns)
+        are just as relevant for WEB-projects
+        as they were for traditional stand-alone clients as you did the previous semester</p>
+
+      <div style="margin-top: -10px;">
+        <div class="col-md-6" style="text-align: center;">
+          <p class="smaller" style="text-align: center;">MVC Basic</p>
+          <img src="images/MVC-Process.svg" style="width:75%;"/>
+        </div>
+        <div class="build">
+          <div class="col-md-6" style="text-align: center;">
+            <p class="smaller">MVC With Express and Templates</p>
+            <img src="images/MVC-Process_With_Jade.svg" style="width:75%;text-align: center;"/>
+          </div>
+        </div>
+      </div>
+      <footer class="source"><a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC</a>
+      </footer>
+    </article>
+  </slide>
+
+
+  <slide>
+    <script>
+      $(document).ready(function () {
+
+//            $.ajaxSetup({
+//                error: function (xhr, status, error) {
+//                    alert("An AJAX error occured: " + status + "\nError: " + error);
+//                }
+//            });
+        $("#mvc1").exPresenter({
+          directory: "examples/mvc1/",
+          codeClass: "prettyprint pre16",
+          codeStyle: "float:left;margin-right:5px;margin-bottom:5px;width:100%;background-color:white",
+          presenterStyle: "display:none",
+          commentStyle: "position:absolute;left:60px; top:500px;width:1000px;font-size:22px;",
+          imageStyle: "width:60%;",
+          imageTitle: "MVC"
+        });
+
+        $("#delete").click(function () {
+          $.ajax({
+            url: "/mvc1",
+            method: "delete"
+          }).done(console.log("Deleted"));
+        });
+      });
+    </script>
+    <hgroup>
+      <h2>MVC with Express</h2>
+
+      <h3>Express, MVC and Server Side Templating </h3>
+
+    </hgroup>
+    <article>
+      <div id="mvc1" style="float: left;width:70%;margin-top: -30px;"></div>
+      <div style="margin-top:20px;margin-left:15px;width:25%;float:left;">
+        <p>Rendered View</p>
+        <iframe src="/mvc1" style=height:220px;float:left;background-color:#e6e6e6"></iframe>
+        <button id="delete" style="margin-top: 100px;">delete (do refresh)</button>
+      </div>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>MVC Involving Both Client and Server</h2>
+    </hgroup>
+    <article>
+      <p>In the previous example everything was done on the server</p>
+      <ul>
+        <li>The view was generated on the server</li>
+        <li>The Model Existed on the Server</li>
+        <li>The Controller Existed on the Server</li>
+      </ul>
+      <p>Last Semester however, we had our main focus on Single Page Applications,
+        where most of the dynamic vies are generated on the client (via DOM manipulation) and data are fetched via
+        AJAX</p>
+    </article>
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2>Last semester we did it like this </h2>
+      <h3>Things were "simplified" on the Client using either JQuery or Angular.js</h3>
+    </hgroup>
+    <article>
+      <div style="margin-top: -30px;">
+
+        <img src="images/MVC-Process_ClientServer_2.svg" style="margin:25px;width:100%">
+      </div>
+    </article>
+  </slide>
+
+
+  <slide class="nobackground" style="background: #00163B">
+    <aside class="gdbar right"><img src="../images/logo.png" style="width: 200px;"></aside>
+    <hgroup>
+
+    </hgroup>
+    <article class="flexbox  auto-fadein" style="margin-top: 25%;">
+      <h2>Rest of today; Exercises :-)</h2>
+
+    </article>
+    <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+    </p>
+  </slide>
+
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<!--[if IE]>
+<script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+<script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
+   

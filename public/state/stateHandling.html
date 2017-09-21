@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.13/angular.min.js"></script>-->
+  <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">-->
+  <link rel="stylesheet" media="all" href="../stylesheets/bootstrap-min.css">
+  <link rel="stylesheet" media="all" href="../theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="../theme/css/phone.css">
+
+
+  <script src="../js/jquery-1.11.1.min.js"></script>
+  <script src="../js/presenter.js"></script>
+
+  <base target="_blank">
+  <style>
+    code {
+      color: darkblue;
+    }
+  </style>
+
+  <!-- This opens all links in a new tab. -->
+  <script data-main="../js/slides" src="../js/require-1.0.8.min.js"></script>
+
+  <!--In order to have more than one slideset in the project-->
+  <script src="slides.js"></script>
+
+</head>
+
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="title-slide segue nobackground" style="background: #00163B">
+    <aside class="gdbar"><img src="../images/logo.png" style="width: 200px;"></aside>
+    <hgroup class="auto-fadein" style="color: white;">
+      <div>
+        <div style="float: left;margin-top:0 ">
+          <h1 data-config-title></h1>
+
+          <h2 data-config-subtitle></h2>
+
+          <p data-config-presenter></p>
+        </div>
+        <div style="float:left;margin-left: 2em;margin-top: -0px;">
+
+        </div>
+      </div>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>State - what does it mean</h2>
+    </hgroup>
+    <article>
+      <div class="build">
+        <div class="row">
+          <div class="col-md-2">
+            <img style="width:100%;" src="images/haveyoursay.jpg"/>
+          </div>
+          <div class="col-md-10">
+            <p>What is meant by <b>state</b> in the context of Computer Science<b>?</b></p>
+          </div>
+        </div>
+        <div style="margin-top: 1em;">
+          The state of a computer program is a technical term for all the stored information,
+          at a given instant in time, to which the program has access<br/>
+          <a style="font-size: .5em;" href="https://en.wikipedia.org/wiki/State_(computer_science)">According to
+            Wikepedia</a>
+        </div>
+
+
+        <div class="row" style="margin-top: 2em;">
+          <div class="col-md-2">
+            <img style="width:100%;" src="images/haveyoursay.jpg"/>
+          </div>
+          <div class="col-md-10">
+            <p>What is meant by <b>state</b> in the context of a Web Page<b>?</b></p>
+          </div>
+        </div>
+        <div style="margin-top: 1em;">
+          "the current visual representation of the app on screen." ???
+        </div>
+      </div>
+
+
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>State and Props in REACT</h2>
+    </hgroup>
+    <article>
+      <div class="build" style="margin-top: -20px;">
+        <div class="row">
+          <div class="col-md-1">
+            <img style="width:100%;" src="images/discuss.png"/>
+          </div>
+          <div class="col-md-11">
+            <p>What is <b>props</b> in React<b>?</b></p>
+            <div class="build">
+              <ul style="font-size: 0.8em;">
+                <li>A way to provide "creation" parameters to React Components<br/></li>
+                <li>Can be "type-checked" via <code>propTypes</code><br/></li>
+                <li>Can have initial values via <code>defaultProps</code></li>
+                <li><code>props</code> are set by the parent and they are fixed throughout the lifetime
+                  of a component <br/></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-1">
+            <img style="width:100%;" src="images/discuss.png"/>
+          </div>
+          <div class="col-md-11">
+            <p>What is <b>State</b> in React<b>?</b></p>
+            <div class="build">
+              <ul style="font-size: 0.8em;">
+                <li>In the React sense, “state” is an object that represents the parts of the app that can changee<br/>
+                </li>
+                <li>Calling <code>setState({..})</code> will re-run the <code>render</code> function. <br/></li>
+                <li>Generally initialized in a constructor and changed via calls to <code>setState</code> when needed
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-1">
+            <img style="width:100%;" src="images/discuss.png"/>
+          </div>
+          <div class="col-md-11">
+            <p>What should I use - <code>Props</code> or <code>state</code><b>?</b></p>
+            <div class="build">
+              <ul style="font-size: 0.8em;">
+                <li>Avoid state when possible. <a
+                        href="https://medium.com/@housecor/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc#.mdkjqgfor">
+                  Stateless components</a> (or dumb components)&rightarrow; </li>
+                <ul>
+                  <li>Will allways do the same thing, when given the same props</li>
+                  <li>Are easier to understand and test</li>
+                </ul>
+                <li>A common pattern is to declare state in top-level components,
+                  and pass it down to children via props
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2 style="font-size: 1.6em;">What when my application grows bigger?</h2>
+    </hgroup>
+    <article>
+      <p>Compared to other SPA-frameworks like, for example Angular, React is very light-weight and leave it
+        up to developers to solve greater "architectural" challenges
+      </p>
+      <p>We have already seen that routing for example, requires an extra package</p>
+      <p>React, by itself does not really answer questions like:</p>
+      <ul>
+        <li>Where should we fetch/synchronize with- external data</li>
+        <li>How should components communicate? We know we can pass information from parent to child
+          via props, but what with?
+          <ul>
+            <li>Child to Parent Communication</li>
+            <li>Sibling to Sibling Communication</li>
+            <li>Any to Any Communication</li>
+          </ul>
+        </li>
+
+      </ul>
+    </article>
+  </slide>
+  <slide>
+    <hgroup>
+      <h2>Some Basic React Patterns 1</h2>
+      <h3>"Container and Presentational" or "Smart and Dump" Components </h3>
+    </hgroup>
+    <article>
+      <p style="margin-top: -30px;">A very common pattern with (not only) React which makes components easier to reuse
+        and reason about
+        is to divide them into two categories</p>
+      <div class="row build">
+        <div class="col-md-6">
+          <p style="color: #2a6496">Container (Smart) Components</p>
+          <ul style="font-size: 0.9em;">
+            <li>Describe <i>how things work</i></li>
+            <li>Provide no DOM markup or styles</li>
+            <li>Provide application data, do data fetching</li>
+            <li>Are often stateful, as they tend to serve as data sources</li>
+            <li>Trigger "state Containers" like Flux, Redux or MobX</li>
+            <li>Named xxxContainer by convention</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <p style="color: #2a6496">Presentational (Dumb) Components</p>
+          <ul style="font-size: 0.9em;">
+            <li>Describe <i>how things look</i></li>
+            <li>Don’t specify how the data is loaded or mutated</li>
+            <li>Receive only props, providing data and callbacks</li>
+            <li>Writen as functional components unless they need state or lifecycle hooks</li>
+            <li>Named anything that’s a UI noun</li>
+          </ul>
+        </div>
+      </div>
+      <footer class="source">
+        <a href="https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.5j9ch7if4">Ref</a>
+      </footer>
+    </article>
+  </slide>
+
+
+  <!--<script>-->
+  <!--$(document).ready(function () {-->
+  <!--$("#view").exPresenter({-->
+  <!--directory: "example1/",-->
+  <!--codeClass: "prettyprint pre16",-->
+  <!--codeStyle: "height:430px;",-->
+  <!--presenterStyle: "display:none"-->
+  <!--});-->
+  <!--})-->
+  <!--</script>-->
+  <!---->
+  <script>
+    $(document).ready(function () {
+      $("#view").exPresenter({
+        directory: "example1/",
+        codeClass: "prettyprint pre16",
+        codeStyle: "float:left;margin-right:5px;margin-bottom:5px;width:65%;background-color:white;",
+        presenterStyle: "float:right;width:30%;height:350px;"
+      });
+    })
+  </script>
+
+  <slide>
+    <hgroup>
+      <h2>Basic React Patterns 2</h2>
+      <h3>Container Components </h3>
+    </hgroup>
+    <article>
+      <div id="view"></div>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Redux, Flux,... OR MobX </h2>
+    </hgroup>
+    <article>
+      <div style="margin-top: -30px;">
+        <iframe class="scaled_iframe" style="width: 90%; height: 55vh;" src="https://www.youtube.com/embed/83v8cdvGfeA"
+                frameborder="0">
+        </iframe>
+        <footer class="source"><a href="https://www.youtube.com/watch?v=83v8cdvGfeA">MobX vs Redux</a></footer>
+      </div>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>MobX - Before We Start </h2>
+    </hgroup>
+    <article>
+      <div>
+        <p>MobX is NOT a State Container in itself (like Redux) or even an Architecture</p>
+
+        <p>Its a library which solves (Observer-like) technical problems and should be used
+          combined with proper engineering practices like:</p>
+        <ul>
+          <li>Encapsulate logic in methods/classes</li>
+          <li>Organize data in Stores/Facades</li>
+          <li>Notify Observers when data change</li>
+          <li>Basically use it, combined with proper OO-techniques/ideas</li>
+        </ul>
+      </div>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>MobX - Why? </h2>
+    </hgroup>
+    <article>
+      <div style="margin-top: -15px;">
+
+        <p>First of all. For (simpler) applications you don't need "extra's" like Redux or MobX, as you
+          have seen in week-1</p>
+        <p>With MobX however, "simple applications" gets even simpler, so it's harder to find argument for
+          "not to use it" ;-)</p>
+        <ul>
+          <li>It turns React into what its name implies; that is being truly <b>Reactive</b></li>
+          <li>It provide more functionality with:
+            <ul>
+              <li>Less Code</li>
+              <li>Fewer Errors</li>
+            </ul>
+          </li>
+          <li>No need to call setState(..) anymore</li>
+          <li>No need for complex "elevator" events to subscribe to relevant data</li>
+          <li>Easy to understand, Object Oriented Code,
+            drawing heavily on the Observer Pattern
+          </li>
+        </ul>
+      </div>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>MobX - an introduction </h2>
+    </hgroup>
+    <article>
+      <div style="margin-top: -30px;">
+        <p>
+          MobX's strategy toward state managing is to make it impossible to produce an inconsistent state.</br/>
+          The strategy to achieve that is: Make sure that everything that can be <em>derived</em> from the application
+          state, will be derived. <b>Automatically</b>.</p>
+        <p>Conceptually MobX treats your application like a <a
+                href="https://docs.google.com/spreadsheets/d/1tzG8lVHRNYNbzO4-6jVWye8t_yRmNgptTLDu4dAynVQ/edit?usp=sharing">
+          spreadsheet</a>.</p>
+
+      </div>
+      <img style="width: 50%;margin-left: 10em;" src="images/mobxoverview.png">
+
+      <footer class="source"><a href="https://mobx.js.org/getting-started.html">Ten minute introduction to MobX and
+        React</a></footer>
+      </div>
+    </article>
+  </slide>
+  <slide>
+    <hgroup>
+      <h2>MobX - The Building Blocks</h2>
+    </hgroup>
+    <article>
+      <div style="margin-top: 20px;">
+        <img style="width: 120%;margin-left:-2.5em;" src="images/mobxOverViewHorizontal.png"/>
+      </div>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>MobX - Demo time :-)</h2>
+    </hgroup>
+    <article>
+      <p style="margin-top: -25px;">We will use MobX's <a href="https://mobx.js.org/getting-started.html">Ten minute
+        introduction ot MobX and React</a>,
+        and we can easily spend <em>much</em> more than 10 minutes on the example ;-)</p>
+      <div style="margin-top: 20px;" class="row">
+        <p></p>
+        <div class="col-md-4"/>
+        <img style="width:80%" , src="../images/Demo.png"/>
+        <p>Clone start code from here: <br/><a style="font-size: small"
+                                               href="https://github.com/Lars-m/MobxStartCode.git">https://github.com/Lars-m/MobxStartCode.git</a>
+        </p>
+
+      </div>
+      <div class="col-md-8">
+        <p>The example will end up with an architecture as sketched below: </p>
+        <img style="width: 80%; margin-left: 3em;margin-top:-1em;" src="images/exercise10m.PNG"/>
+      </div>
+      </div>
+    </article>
+  </slide>
+  <slide>
+    <hgroup>
+      <h2>What you should have learned</h2>
+      <h3>This is what you should have learned from the exercise/demo</h3>
+    </hgroup>
+    <article>
+      <div style="margin-top: -25px;">
+        <p>Why is worth considering using MobX</p>
+        <p>Basic MobX decorators like:</p>
+        <ul>
+          <li><code>@observable</code></li>
+          <li><code>@computed</code></li>
+          <li><code>@observer</code></li>
+          <li><code>@action</code></li>
+        </ul>
+        <p>The next two slides provides an opinionated React/MobX architecture, which we suggest you follow for the rest of the semester</p>
+      </div>
+    </article>
+  </slide>
+  <slide>
+    <hgroup>
+      <h2>MobX/React - Suggested Architecture-1</h2>
+    </hgroup>
+    <article>
+      <div style="margin-top: -25px;">
+        <p style="margin-bottom: 4px;">Use MobX to create <em>Data-Stores</em>, inject those stores via Props, and
+          manipulate data only in stores via actions</p>
+        <img style="width: 65%;margin-left: 6em;" src="images/suggestArchitecture.PNG">
+      </div>
+    </article>
+  </slide>
+  <slide>
+    <hgroup>
+      <h2>MobX/React - Suggested Architecture-2</h2>
+    </hgroup>
+    <article>
+      <div style="margin-top: -25px;">
+        <p style="margin-bottom: 4px;">Use MobX to create <em>Data-Stores</em> using <code>@observable</code>, <code>@computed</code>
+          and <code>@action</code> to provide "traditional" encapsulated <em>observable</em> components </p>
+        <img style="width: 75%;margin-left: 6em;" src="images/trueEncapsulation.PNG">
+      </div>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>MobX/React @observer</h2>
+    </hgroup>
+    <article>
+      <div style="margin-top: -25px;">
+        <p style="font-size: .75em;">The observer function/decorator can be used to turn <b>ReactJS</b> components into <b>reactive components</b>.
+          It wraps the component's render function in <code>mobx.autorun</code> to make sure that any data that is used during the rendering
+          of a component forces a re-rendering upon change
+        <img style="width: 75%;margin-left: 6em;" src="images/observer.PNG">
+      </div>
+      <p style="font-size: 0.8em">Example taken from the "React Router With Mobx" exercise. We are observing the BookStore</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>MobX Arrays</h2>
+    </hgroup>
+    <article>
+      <div style="margin-top: -25px;">
+        <p>
+          The MobX "array" you get when decorating an array like:</p>
+        <pre class="prettyprint">
+@observable
+books = [{ title: "Learn React}, {title: "Learn MobX"}, .....] </pre>
+        <p>Is not a <b>real array</b>, but a MobX "fake" with almost the same functionality + MORE</p>
+        <p>This has for example the following consequences:</p>
+        <pre class="prettyprint">
+var newBooks = []; //Assume this contains a replacement of the books
+//This will NOT work, we have overwritten the original MobX-array
+this.books = newBooks
+//Do it like this, that will work
+this.books.<b>replace</b>(newBooks);</pre>
+        <p>Se here details about the MobX <a href="https://mobx.js.org/refguide/array.html">Array</a> and MobX methods</p>
+      </div>
+
+    </article>
+  </slide>
+
+
+  <slide class="nobackground" style="background: #00163B">
+    <aside class="gdbar right"><img src="../images/logo.png" style="width: 200px;"></aside>
+    <hgroup>
+
+    </hgroup>
+    <article class="flexbox  auto-fadein" style="margin-top: 25%;">
+      <h2>Rest of today; Exercises :-)</h2>
+
+    </article>
+    <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+    </p>
+  </slide>
+
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<!--[if IE]>
+<script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+<script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>

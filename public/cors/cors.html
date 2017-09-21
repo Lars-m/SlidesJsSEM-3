@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.13/angular.min.js"></script>-->
+  <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">-->
+  <link rel="stylesheet" media="all" href="../stylesheets/bootstrap-min.css">
+  <link rel="stylesheet" media="all" href="../theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="../theme/css/phone.css">
+
+
+  <script src="../js/jquery-1.11.1.min.js"></script>
+  <script src="../js/presenter.js"></script>
+
+  <base target="_blank">
+  <style>
+    code {
+      color: darkblue;
+    }
+  </style>
+
+  <!-- This opens all links in a new tab. -->
+  <script data-main="../js/slides" src="../js/require-1.0.8.min.js"></script>
+
+  <!--In order to have more than one slideset in the project-->
+  <script src="slides.js"></script>
+
+</head>
+
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="title-slide segue nobackground" style="background: #00163B">
+    <aside class="gdbar"><img src="../images/logo.png" style="width: 200px;"></aside>
+    <hgroup class="auto-fadein" style="color: white;">
+      <div>
+        <div style="float: left;margin-top:0 ">
+          <h1 data-config-title></h1>
+
+          <h2 data-config-subtitle></h2>
+
+          <p data-config-presenter></p>
+        </div>
+        <div style="float:left;margin-left: 2em;margin-top: -0px;">
+          <img src="images/cors.jpg" style="float:left;margin-left: 3em;width:300px;">
+        </div>
+      </div>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>The Same Origin Policy (SOP)</h2>
+    </hgroup>
+    <article>
+      <p style="margin-top: -25px;">
+        The same-origin policy is a concept in the <em>web application security model</em>.<br/>
+        Under the policy, a web browser permits scripts contained in a first web page to access data in a
+        second web page, but only if both web pages have the same origin.<br/>
+        An origin is defined as a combination of URI scheme, hostname, and port number.<br/>
+        This policy prevents a malicious script on one page from obtaining access to sensitive data
+        on another web page through that page's Document Object Model
+      </p>
+      <div>
+        <img style="margin-left: 5em;" src="images/sop.PNG"/>
+      </div>
+      <footer class="source"><a href="http://en.wikipedia.org/wiki/Same-origin_policy">SOP</a></footer>
+    </article>
+  </slide>
+  <slide>
+    <hgroup>
+      <h2>The Same Origin Policy (SOP)</h2>
+      <h3>Origin Determination Rules</h3>
+    </hgroup>
+    <article>
+      <div style="margin-top: -25px;">
+        <img style="width:100%" src="images/sop-rules.PNG"/>
+      </div>
+      <footer class="source"><a href="http://en.wikipedia.org/wiki/Same-origin_policy">SOP</a></footer>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>The Same Origin Policy (SOP)</h2>
+      <h3>Solving SOP-Problems</h3>
+    </hgroup>
+    <article>
+      <div>
+        <p>There are several ways to Relax the Same Origin Policy. we will look at the following two strategies:.
+        </p>
+        <ul>
+          <li>
+            <p>Fetch data via the <b>Origin</b> server<br/>
+              SOP is a policy implemented <em>only</em> by Browsers.<br/>
+              Nothing similar to SOP, prevents a <em>Server</em> from making a request to another <em>Server</em></br>
+            </p>
+          </li>
+          <li>
+            <p>Cross-origin resource sharing <b>(CORS)</b><br/>
+              Defines a way in which a browser and server can interact to safely determine whether or not to allow the
+              cross-origin request</p>
+          </li>
+        </ul>
+      </div>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>The Same Origin Policy (SOP)</h2>
+      <h3>Solved via a Proxy on the Origin Server</h3>
+    </hgroup>
+    <article>
+      <div style="margin-top: -25px;">
+        <p>Since SOP is a policy implemented only by Browsers we can make a <em>Proxy</em> on our Origin-Server as
+          sketched below</p>
+        <img style="margin-left: 5em;" src="images/proxy-adapter.PNG">
+        <p>This will often by the most viable solution if you do not have any control over the source-server </p>
+      </div>
+
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>The Same Origin Policy (SOP)</h2>
+      <h3>Solved via the <b>C</b>ross-<b>O</b>rigin <b>R</b>esource <b>S</b>haring (<b>CORS</b>) Mechanism</h3>
+    </hgroup>
+    <article>
+      <div class="build">
+        <div style="margin-top: -25px;">
+          <p>CORS defines a way in which a browser and server can interact to determine whether or not it is safe
+            to allow the cross-origin request.<br/>
+            It allows for more freedom and functionality than purely same-origin requests,
+            but is more secure than simply allowing all cross-origin requests.<br/>
+            <em>It is a recommended standard of the W3C.</em></p>
+        </div>
+        <div>
+          <p style="font-size: larger;color: #2a6496">Simple Requests</p>
+          <p>Simple Requests (name inspired by <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">
+            this</a> article) don’t trigger a CORS preflight.</p>
+        </div>
+        <div>
+          <p style="font-size: larger;color: #2a6496">Preflight Requests</p>
+          <p>Unlike <em>simple requests</em> <em>preflighted</em> requests first send an HTTP request by the OPTIONS
+            method
+            to the resource on the other domain, in order to determine whether the actual request is safe to send.<br/>
+            Cross-site requests are preflighted like this since they may have implications to user data.</p>
+        </div>
+      </div>
+    </article>
+  </slide>
+  <slide>
+    <hgroup>
+      <h2>SOP / CORS - Why Should I Care?</h2>
+    </hgroup>
+    <article>
+      <p>We will, from time this semester, user resources. which DO NOT set the CORS headers, so you must know about the
+        "Proxy Solution"</p>
+      <p>
+        In the next Period we will focus on <b>Single Page Applications</b><br/><br/>
+        For this kind of applications it is not uncommon to have your client code (JavaScript/React code) hosted on one
+        server
+        and your Backend code on a different server(s).</br>
+        <i>This will inevitable lead to SOP-problems, which you should solve with CORS</i>
+      </p>
+      <p>Read one of these two articles for the full story (the last one, if you wan't it all)</p>
+      <ul>
+        <li><a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">https://en.wikipedia.org/wiki/Cross-origin_resource_sharing</a>
+        </li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">
+          https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
+        </a></li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>CORS - Practical Demo</h2>
+    </hgroup>
+    <article style="margin-top: 10px;">
+      <a href="corsdemo/styledForSeparateWindow.html" style="font-size: medium;">Run demo in a separate Widow</a>
+      <iframe src="corsdemo/corsdemo.html" style="height:600px;width:1000px"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>REST with JAX-RS </h2>
+      <h3>How to set the right headers using JAX-RX Filters</h3>
+    </hgroup>
+    <article style="margin-top: 10px;">
+      <p>You can set the required headers for each REST-endpoint, but for a large REST-API that would be
+        extremely cumbersome</p>
+      <p>JAX-RS provides a concept <a href="https://jersey.java.net/documentation/latest/filters-and-interceptors.html">Filters</a> which can be used when you want to modify any request or response
+        parameters like headers.<br/>
+        In our case we can use it to set the required CORS headers on all request</p>
+      <img src="images/jax-rs-filter.PNG" style="width: 60%; margin-left: 6em;"/>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>REST with JAX-RS </h2>
+      <h3>How to set the CORS headers</h3>
+    </hgroup>
+    <article style="margin-top: 10px;">
+      <p>This <b>Request</b>-filter will handle requests of the type OPTIONS</p>
+      <p>It Will abort the request, so none of your REST-Endpoint code is activated.<br/>
+        The response will however still go through the chain of possible Response-filters
+      </p>
+      <pre class="prettyprint pre18" data-lang="Java">
+@Provider  //This will ensure that the filter is used "automatically"
+@PreMatching
+public class CorsRequestFilter implements ContainerRequestFilter {
+  private final static Logger log = Logger.getLogger(CorsRequestFilter.class.getName());
+  @Override
+  public void filter(ContainerRequestContext requestCtx) throws IOException {
+    // When HttpMethod comes as OPTIONS, just acknowledge that it accepts...
+    if (requestCtx.getRequest().getMethod().equals("OPTIONS")) {
+      log.info("HTTP Method (OPTIONS) - Detected!");
+      // Just send a OK response back to the browser.
+      // The response goes through the chain of applicable response filters.
+      requestCtx.abortWith(Response.status(Response.Status.OK).build());
+    }
+  }
+} </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>REST with JAX-RS </h2>
+      <h3>How to set the right headers</h3>
+    </hgroup>
+    <article style="margin-top: 10px;">
+      <p>This <b>Response</b>-filter will set the required headers on all responses</p>
+      <pre class="prettyprint pre18" data-lang="Java">
+@Provider
+@PreMatching
+public class CorsResponseFilter implements ContainerResponseFilter {
+  private final static Logger LOG = Logger.getLogger(CorsResponseFilter.class.getName());
+  @Override
+  public void filter( ContainerRequestContext requestCtx, ContainerResponseContext res )
+    throws IOException {
+    LOG.info( "Executing REST response filter" );
+    res.getHeaders().add("Access-Control-Allow-Origin", "*" );
+    res.getHeaders().add("Access-Control-Allow-Credentials", "true" );
+    res.getHeaders().add("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT" );
+    res.getHeaders().add("Access-Control-Allow-Headers", "Origin, Accept, Content-Type");
+  }
+}</pre>
+    </article>
+  </slide>
+  <slide>
+    <hgroup>
+      <h2>Exercise</h2>
+    </hgroup>
+    <article>
+      <p>Select one of your JAX-RS projects, and add the two filters given on the previous slides to your code</p>
+      <p>Because of the <code>@Provider</code> annotation they should be automatically discovered </p>
+      <p>&nbsp;</p>
+      <p>Use Postman, or better, your existing JavaScript front-ends, to verify that CORS-headers are added to all your requests</p>
+    </article>
+  </slide>
+
+  <slide class="nobackground" style="background: #00163B">
+    <aside class="gdbar right"><img src="../images/logo.png" style="width: 200px;"></aside>
+    <hgroup>
+
+    </hgroup>
+    <article class="flexbox  auto-fadein" style="margin-top: 25%;">
+
+    </article>9999999999
+    <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+    </p>
+  </slide>
+
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<!--[if IE]>
+<script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+<script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>

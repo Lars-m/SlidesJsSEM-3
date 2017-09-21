@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.0"
+   width="500"
+   height="550"
+   id="svg2">
+  <defs
+     id="defs4">
+    <marker
+       refX="0"
+       refY="0"
+       orient="auto"
+       id="Arrow2Mstart"
+       style="overflow:visible">
+      <path
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(0.6,0.6)"
+         id="path3232"
+         style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round" />
+    </marker>
+    <marker
+       refX="0"
+       refY="0"
+       orient="auto"
+       id="Arrow2Mend"
+       style="overflow:visible">
+      <path
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6,-0.6)"
+         id="path3235"
+         style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round" />
+    </marker>
+    <marker
+       refX="0"
+       refY="0"
+       orient="auto"
+       id="Arrow1Send"
+       style="overflow:visible">
+      <path
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         id="path3223"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none" />
+    </marker>
+    <marker
+       refX="0"
+       refY="0"
+       orient="auto"
+       id="Arrow1Lend"
+       style="overflow:visible">
+      <path
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         id="path3211"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none" />
+    </marker>
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1">
+    <path
+       d="m 238,499.36218 a 33.5,33 0 1 1 -67,0 33.5,33 0 1 1 67,0 z"
+       transform="matrix(1.7910448,0,0,1.8181818,-132.87975,-440.3757)"
+       id="path2383"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#eaeaea;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.12496865;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Verdana;-inkscape-font-specification:Verdana Bold" />
+    <rect
+       width="188"
+       height="82"
+       x="15.5"
+       y="227.94446"
+       id="rect3155"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#eaeaea;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Verdana;-inkscape-font-specification:Verdana Bold" />
+    <rect
+       width="254"
+       height="82"
+       x="230.5"
+       y="227.94446"
+       id="rect3157"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#eaeaea;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Verdana;-inkscape-font-specification:Verdana Bold" />
+    <rect
+       width="204"
+       height="82"
+       x="130.5"
+       y="22.444471"
+       id="rect3159"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#eaeaea;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Verdana;-inkscape-font-specification:Verdana Bold" />
+    <text
+       x="174.30669"
+       y="54.052284"
+       id="text3161"
+       xml:space="preserve"
+       style="font-size:26px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#333333;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana Bold"><tspan
+         x="174.30669"
+         y="54.052284"
+         id="tspan3163">MODEL</tspan></text>
+    <text
+       x="61.717125"
+       y="258.18848"
+       id="text3165"
+       xml:space="preserve"
+       style="font-size:26px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#333333;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana Bold"><tspan
+         x="61.717125"
+         y="258.18848"
+         id="tspan3167">VIEW</tspan></text>
+    <text
+       x="262.88773"
+       y="255.89497"
+       id="text3169"
+       xml:space="preserve"
+       style="font-size:26px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#333333;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana Bold"><tspan
+         x="262.88773"
+         y="255.89497"
+         id="tspan3171">CONTROLLER</tspan></text>
+    <text
+       x="-81.661507"
+       y="503.71768"
+       transform="matrix(0.6769594,-0.7360204,0.7360204,0.6769594,0,0)"
+       id="text3173"
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#333333;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana Bold"><tspan
+         x="-81.661507"
+         y="503.71768"
+         id="tspan3175">USES</tspan></text>
+    <text
+       x="289.5"
+       y="166.82448"
+       id="text3177"
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#333333;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana Bold"><tspan
+         x="289.5"
+         y="166.82448"
+         id="tspan3179">MANIPULATES</tspan></text>
+    <path
+       d="m 288.80074,419.01135 17.07682,-18.3407"
+       id="path3181"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:none;stroke:#000000;stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Verdana;-inkscape-font-specification:Verdana Bold" />
+    <path
+       d="m 352.16308,348.60357 23.44405,-26.03158"
+       id="path3183"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:none;stroke:#000000;stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend);font-family:Verdana;-inkscape-font-specification:Verdana Bold" />
+    <path
+       d="m 99.715109,321.32805 13.654301,17.88213"
+       id="path3185"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:none;stroke:#000000;stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Verdana;-inkscape-font-specification:Verdana Bold" />
+    <path
+       d="m 153.33318,393.30583 22.90054,29.6327"
+       id="path3187"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:none;stroke:#000000;stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend);font-family:Verdana;-inkscape-font-specification:Verdana Bold" />
+    <text
+       x="350.35611"
+       y="102.61337"
+       transform="matrix(0.563762,0.8259373,-0.8259373,0.563762,0,0)"
+       id="text3189"
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#333333;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana Bold"><tspan
+         x="350.35611"
+         y="102.61337"
+         id="tspan3191">SEES</tspan></text>
+    <path
+       d="m 117.5,65.444466 c -9.7968,1.18892 -23.65736,6.76628 -26,34 l 0,42.000004"
+       id="path3193"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:none;stroke:#000000;stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Verdana;-inkscape-font-specification:Verdana Bold" />
+    <path
+       d="m 344.5,67.444466 c 25.7968,-0.81108 43.65736,6.76628 46,34.000004 l 0,42"
+       id="path3195"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:none;stroke:#000000;stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow2Mstart);marker-end:none;font-family:Verdana;-inkscape-font-specification:Verdana Bold" />
+    <text
+       x="39.167664"
+       y="166.82448"
+       id="text3197"
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#333333;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana Bold"><tspan
+         x="39.167664"
+         y="166.82448"
+         id="tspan3199">UPDATES</tspan></text>
+    <text
+       x="194.14006"
+       y="475.70148"
+       id="text3201"
+       xml:space="preserve"
+       style="font-size:26px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#333333;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana Bold"><tspan
+         x="194.14006"
+         y="475.70148"
+         id="tspan3203">USER</tspan></text>
+    <path
+       d="m 93.5,175.44447 0,44"
+       id="path8205"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:none;stroke:#000000;stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend);font-family:Verdana;-inkscape-font-specification:Verdana Bold" />
+    <path
+       d="m 388.5,218.37304 0,-42.85714"
+       id="path8207"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:none;stroke:#000000;stroke-width:2.07019663px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Verdana;-inkscape-font-specification:Verdana Bold" />
+    <text
+       x="232.42529"
+       y="74.7976"
+       id="text3161-8"
+       xml:space="preserve"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000080;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana Bold"><tspan
+         x="232.42529"
+         y="74.7976"
+         id="tspan3161">A JavaScript or</tspan><tspan
+         x="232.42529"
+         y="94.7976"
+         id="tspan3164">JSON Object</tspan></text>
+    <text
+       x="108.50093"
+       y="278.71335"
+       id="text3161-8-6"
+       xml:space="preserve"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000080;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana Bold"><tspan
+         x="111.23531"
+         y="278.71335"
+         id="tspan3194">A Template </tspan><tspan
+         x="108.50093"
+         y="298.71335"
+         id="tspan3196">(Jade) File</tspan></text>
+    <text
+       x="359.16028"
+       y="284.85687"
+       id="text3161-8-6-3"
+       xml:space="preserve"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000080;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana Bold"><tspan
+         x="359.16028"
+         y="284.85687"
+         id="tspan3222">A Route Handler</tspan></text>
+  </g>
+</svg>

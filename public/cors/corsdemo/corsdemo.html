@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <title>Document</title>
+</head>
+</div>
+
+<body>
+<div>
+  <h3>Simple requests</h3>
+  <div id="btns">
+    <div class="row">
+      <div class="col-md-4">
+        <p>Server does not allow CORS (does not set the <em>Access-Control-Allow-Origin</em> header) </p>
+        <button id="btnnocors">Get Quote (No CORS)</button>
+      </div>
+      <div class="col-md-4">
+        <p>Server <b>allows CORS</b> (sets the <em>Access-Control-Allow-Origin</em> header) VERIFY THIS </p>
+        <button id="btncors">Get Quote (CORS)</button>
+      </div>
+      <div class="col-md-4">
+        <p id="q" style="min-height: 1.3em;border:gold solid 1px; border-radius: 2px; width: 20em; "></p>
+      </div>
+    </div>
+  </div>
+  <hr/>
+  <div id="savebtns" style="margin-top: 1em;">
+    <h3>Preflighted requests</h3>
+    <div class="row">
+      <div class="col-md-4">
+        <b>New Quote (No CORS):</b>
+        <p>Server does not allow CORS (does not set anything related to CORS)
+      </div>
+      <div class="col-md-4" style="margin-bottom: 2em;">
+        <input type="text" id="newq1">
+        <button id="saveBtn1">Save</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <b>New Quote (attemt with "simple" CORS):</b>
+        <p>Server sets ONLY the <em>Access-Control-Allow-Origin</em> header) VERIFY THIS </p>
+      </div>
+      <div class="col-md-4">
+        <input type="text" id="newq2">
+        <button id="saveBtn2">Save</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4"><b>New Quote (CORS- not simple):</b>
+        <p>Server handles the preflight request and sets ALL required headers. VERIFY THIS </p>
+      </div>
+      <div class="col-md-4">
+        <input type="text" id="newq3">
+        <button id="saveBtn3">Save</button>
+      </div>
+    </div>
+  </div>
+  <p id="error" style="color: red; font-size: large"></p>
+  <p id="ok" style="color: darkgreen;font-size: large""></p>
+</div>
+
+<script>
+  function clearMessages() {
+    document.getElementById("error").innerText = "";
+    document.getElementById("ok").innerText = "";
+  }
+  var BASE_URL = "https://mydemos.dk/cors/api/quote/";
+  var ERROR_MSG = "<br/>Open Developer Tools to see the full error messags</br>";
+  ERROR_MSG += "Also (important) <b>use the NetWork tab</b> to see what was actually sent and received";
+  var OK_MSG = "<br/> Open Developer Tools and the NetWork tab, <b>whatch the  headers</b>, and MAKE SURE you understand why it worked";
+  document.getElementById("btns").addEventListener("click", function (evt) {
+    if (evt.target.tagName !== "BUTTON") {
+      return;
+    }
+    var id = evt.target.id;
+    var URL = (id === "btncors") ? BASE_URL + "cors" : BASE_URL + "nocors"
+    clearMessages();
+    fetch(URL).then(function (res) {
+      return res.json().then(function (json) {
+        document.getElementById("q").innerText = json.quote;
+        document.getElementById("ok").innerHTML = OK_MSG;
+      })
+    }).catch(function (err) {
+      document.getElementById("error").innerHTML = err + ERROR_MSG;
+    })
+  })
+
+  document.getElementById("savebtns").addEventListener("click", function (evt) {
+    if (evt.target.tagName !== "BUTTON") {
+      return;
+    }
+    var id = evt.target.id;
+    var newText, data;
+    var URL = BASE_URL;
+    switch (id) {
+      case "saveBtn2":
+        URL += "cors";
+        newText = document.getElementById("newq2").value;
+        break;
+      case "saveBtn3":
+        URL += "corspost";
+        newText = document.getElementById("newq3").value;
+        break;
+      default:
+        URL += "nocors";
+        newText = document.getElementById("newq1").value;
+        break;
+    }
+    var data = {quote: newText};
+    var options = {
+      method: "POST",
+      body: JSON.stringify(data),
+      /* headers: {
+       "Content-type" : "application/json"
+       }*/
+      headers: new Headers({
+        'Content-Type': 'application/json'
+      })
+    }
+
+    clearMessages();
+    fetch(URL, options).then(function (res) {
+      var msg = OK_MSG + '<br/> Press <b>Get Quote (CORS)</b> to se that "it worked"';
+      msg += "<br/><b>How  many</b> requests whas sent by the browser for this POST request?";
+      document.getElementById("ok").innerHTML = msg;
+
+    }).catch(function (err) {
+      document.getElementById("error").innerHTML = ERROR_MSG;
+    })
+
+  })
+</script>
+</body>
+
+</html>

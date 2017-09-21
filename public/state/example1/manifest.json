@@ -1,0 +1,29 @@
+{
+    "name": "",
+    "files": [
+      {"fileName":"Main.js","title":"Plain (without Component)",
+        "include": {"start": "//start","end": "//end"}
+      },
+      {"fileName":"CommentList2.js","title":"Presenter",
+        "include": {"start": "// Presenter start","end": "// Presenter end"}
+      },
+      {"fileName":"CommentList2.js","title":"Container for the Presenter",
+        "include": {"start": "// Container start","end": "// Container end"}
+      }
+    ],
+    "filesOnlyForPlunkr": [
+      "index.html",
+      "Main.js",
+      "CommentList2.js"
+    ],
+    "showThisAlways": "index.html",
+    "usePlunk" : "true",
+    "tags": ["React","Containers"],
+    "description" : "Example"
+
+}
+
+
+
+
+

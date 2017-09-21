@@ -1,0 +1,25 @@
+{
+  "name": "",
+  "files": [
+    {"fileName":"Main.js","title":"The Links (Main.js)",
+      "include": {"start": "//Outer View start","end": "//Outer View end"}
+    },
+    {"fileName":"Main.js","title":"Views (Main.js)",
+      "include": {"start": "//Views start","end": "//Views end"}
+    },
+    {"fileName":"Main.js","title":"Router (Main.js)",
+      "include": {"start": "//Router start","end": "//Router end"}
+    },
+    "style.css",
+    "index.html"
+  ],
+  "filesOnlyForPlunkr": [
+    "index.html",
+    "Main.js",
+    "style.css"
+  ],
+  "showThisAlways": "index.html",
+  "usePlunk" : "true",
+  "tags": ["React","Routing"],
+  "description" : "React - Routing - Example"
+}
