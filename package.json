@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/wwwSem3Slides"
   },
-  "main": "./bin/www",
+  "main": "./bin/wwwSem3Slides",
   "dependencies": {
     "@types/node-fetch": "^1.6.5",
     "body-parser": "^1.0.2",
