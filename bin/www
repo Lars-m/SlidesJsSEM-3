@@ -4,7 +4,7 @@ var app = require('../app');
 var http = require('http');
 
 
-var port = normalizePort(process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3001);
+var port = normalizePort(process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3005);
 app.set('port', port);
 var ip = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
 app.set('ip',ip );
