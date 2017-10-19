@@ -35,23 +35,6 @@ app.get("/reactrouter2", function(req, res){
 
 
 
-app.get('/', function (req, res) {
-  res.sendfile('./public/index.html');
-});
-
-let quote = {quote: "Hello World"}
-
-app.get("/nocors",(req,res)=> {
-  res.setHeader('Content-Type', 'application/json');
-  res.json(quote)
-})
-
-app.get("/cors",(req,res)=> {
-  res.setHeader('Content-Type', 'application/json');
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.json(quote)
-})
-
 app.post("/nocors",(req,res)=> {
   console.log(JSON.stringify(req.body));
   quote = req.body;
