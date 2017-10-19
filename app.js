@@ -34,16 +34,6 @@ app.get("/reactrouter2", function(req, res){
 });
 
 
-
-app.post("/nocors",(req,res)=> {
-  console.log(JSON.stringify(req.body));
-  quote = req.body;
-  res.setHeader('Content-Type', 'application/json');
-  //res.setHeader('Access-Control-Allow-Origin', '*');
-  res.json(quote)
-})
-
-
 var jwt = require("jwt-simple");
 app.get("/jwt", function (req, res) {
   var iat = (new Date().getTime() / 1000);  //convert to seconds
