@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="counterModule.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <title></title>
+</head>
+
+<body>
+<!--show-->
+<button onclick="test1()">Count counter1</button>
+<span id="c1"></span>
+<button onclick="test2()" >Count counter2</button>
+<span id="c2"></span>
+
+<script>
+    function test1(){
+        counter1.increment();
+        $("#c1").html(counter1.value());
+    }
+    function test2(){
+        counter2.increment();
+        $("#c2").html(counter2.value());
+    }
+</script>
+<!--/show-->
+</body>
+
+</html>

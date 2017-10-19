@@ -1,0 +1,20 @@
+{
+    "name": "Example Hoisting",
+    "files": [
+      "script1.js",
+      "script1-hoisted.js",
+      "script2.js",
+      "script2-hoisted.js"
+    ],
+    "filesOnlyForPlunkr": [
+        "index.html",
+        "script1.js",
+        "script1-hoisted.js",
+        "script2.js",
+        "script2-hoisted.js"
+    ],
+    "showThisAlways": "index.html",
+    "usePlunk" : "true",
+    "tags": ["javascript","hoisting,example"],
+    "description" : "JavaScript - Example - Hoisting"
+}

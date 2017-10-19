@@ -23,38 +23,42 @@ app.use("/session", sessions);
 var reactRouterEx1 = path.join(__dirname,"public","reactRouting","example1");
 app.use(express.static(reactRouterEx1));
 
+var reactRouterEx2 = path.join(__dirname,"public","reactRouting","example2");
+app.use(express.static(reactRouterEx2));
+
 app.get("/reactrouter1", function(req, res){
   res.sendfile(path.join(reactRouterEx1, 'index.html'));
 });
+app.get("/reactrouter2", function(req, res){
+  res.sendfile(path.join(reactRouterEx2, 'index.html'));
+});
 
-app.use(session({
-  secret: 'Secret For This Exercise',
-  saveUninitialized: true,
-  resave: false,
-  cookie: {maxAge: 1000 * 60 * 15, httpOnly: false},
-  store: memoryStore
-}));
 
 
 app.get('/', function (req, res) {
   res.sendfile('./public/index.html');
 });
 
-app.get('/clear9872579547987547329sessions', function (req, res, next) {
-  try {
-    memoryStore.clear(function (err) {
-      if (err) {
-        return res.json({status: "Problem clearing sessions"})
-      }
-      res.json({status: "all sessions cleared"})
-    })
-  }
-  catch (err) {
-    next(err);
-  }
-});
-var hackerInfo = [];
-var sanitizeHtml = require('sanitize-html');
+let quote = {quote: "Hello World"}
+
+app.get("/nocors",(req,res)=> {
+  res.setHeader('Content-Type', 'application/json');
+  res.json(quote)
+})
+
+app.get("/cors",(req,res)=> {
+  res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.json(quote)
+})
+
+app.post("/nocors",(req,res)=> {
+  console.log(JSON.stringify(req.body));
+  quote = req.body;
+  res.setHeader('Content-Type', 'application/json');
+  //res.setHeader('Access-Control-Allow-Origin', '*');
+  res.json(quote)
+})
 
 
 var jwt = require("jwt-simple");

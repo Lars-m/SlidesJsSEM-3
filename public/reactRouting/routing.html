@@ -46,7 +46,7 @@
           <p data-config-presenter></p>
         </div>
         <div style="float:left;margin-left: 2em;margin-top: -0px;">
-          <img src="images/react-router.png" style="float:left;width:450px;">
+          <img src="images/logo.png" style="float:left;width:450px;">
         </div>
       </div>
     </hgroup>
@@ -120,12 +120,12 @@
   </slide>
   <slide>
     <hgroup>
-      <h2>React Router</h2>
+      <h2>React Router V4</h2>
     </hgroup>
     <article>
       <div>
         <div class="row">
-          <div class="col-md-7">
+          <div class="col-md-8">
             <p><b>React Router</b> is a complete routing library for React</p>
             <b style="color:#2a6496">React Router:</b>
             <ul>
@@ -138,14 +138,14 @@
                 </ul>
             </ul>
           </div>
-          <div class="col-md-5" style="padding-top: 3em;">
+          <div class="col-md-4" style="padding-top: 1em;">
             <img style="width:100%" src="images/react-router.png">
           </div>
         </div>
         <br/>
         <p style="color: #2a6496;font-size: 1.4em;">"Make the URL your first thought, not an after-thought"</p>
       </div>
-      <footer class="source"><a href="https://github.com/ReactTraining/react-router">React-Router</a></footer>
+      <footer class="source"><a href="https://reacttraining.com/react-router/">React-Router</a></footer>
     </article>
   </slide>
 
@@ -155,13 +155,16 @@
     </hgroup>
     <article>
       <div>
-        <p>Regardless of how the URL becomes set, React Router maps the current URL to one or more
-          Routes.</p>
-        <p>A route handler can usually do several things:</p>
+        <p>Routing used to be a "not simple" thing with most SPA frameworks like Angular, Ember
+          and also previous versions of React-routers </p>
+        <p>Dynamic Routing</p>
         <ul>
-          <li>It will render a React Template.</li>
-          <li>It can redirect to a new route, such as if the user isn't allowed to visit that part of the app.</li>
-          <li>It can handle actions that involve changing a model or transitioning to a new route.</li>
+          <li>React Router V4 uses a new concept "Dynamic Routing</li>
+          <li>This means routing that takes place as <em>your app is rendering</em>em>,
+            <b>not</b> in a configuration or convention outside of a running app.</li>
+          <li>What is means is that <em>almost everything is a component in React Router</em></li>
+          <li>Witt this strategy <em>nested routes</em> becomes as simple as <em>How do you nest a <code>div</code></em></li>
+
         </ul>
       </div>
     </article>
@@ -173,15 +176,14 @@
     </hgroup>
     <article>
       <div>
-        <p>Note the following examples uses react-router version 3, which is what we suggest you use for this
+        <p>Note the following examples uses react-router version 4, which is the version you must use this
           semester</p>
 
         <p>Install it like this (in a terminal, in you project root):<br/>
-          <code>npm install react-router@3 --save</code></p>
+          <code>npm install react-router-dom --save</code></p>
         <p style="color:darkblue">Make sure you refer to the right version, when searching for help</p>
         <ul>
-          <li><a href="https://github.com/ReactTraining/react-router/tree/v3/docs">Info</a></li>
-          <li><a href="https://github.com/ReactTraining/react-router/blob/v3/docs/API.md">API</a></li>
+          <li><a href="https://reacttraining.com/react-router/webs">Help and Examples </a></li>
         </ul>
       </div>
     </article>
@@ -202,7 +204,8 @@
   <slide>
     <hgroup>
       <h2>React Routing</h2>
-      <h3>This is the example we will use for the remaining of this introduction</h3>
+      <h3>This is the <a href="https://reacttraining.com/react-router/web/example/basic">
+        basic example</a> taken from the docs (styled differently)</h3>
     </hgroup>
     <article>
       <div style="margin-top: -30px;">
@@ -213,128 +216,175 @@
     </article>
   </slide>
 
-  <script>
-    $(document).ready(function () {
-      $("#view2").exPresenter({
-        directory: "example1/",
-        codeClass: "prettyprint pre16",
-        codeStyle: "height:400px;",
-        presenterStyle: "display:none",
-        manifest: "manifest2.json"
-      });
-    })
-  </script>
+  <!--
+    <script>
+      $(document).ready(function () {
+        $("#view2").exPresenter({
+          directory: "example1/",
+          codeClass: "prettyprint pre16",
+          codeStyle: "height:400px;",
+          presenterStyle: "display:none",
+          manifest: "manifest2.json"
+        });
+      })
+    </script>
 
+    <slide>
+      <hgroup>
+        <h2>React Routing Example</h2>
+      </hgroup>
+      <article>
+        <view id="view2"></view>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>React-Router The "bits an pieces"</h2>
+      </hgroup>
+      <article>
+        <p>Routing in most frameworks is often one of the more complex topics to grab </p>
+        <p>Getting a simple example, and understanding all the pieces in this example is often the way to go</p>
+
+        <p>We will go through the example introduced on the previous slide, step by step </p>
+      </article>
+    </slide>
+  -->
   <slide>
     <hgroup>
-      <h2>React Routing Example</h2>
-    </hgroup>
-    <article>
-      <view id="view2"></view>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>React-Router The "bits an pieces"</h2>
-    </hgroup>
-    <article>
-      <p>Routing in most frameworks is often one of the more complex topics to grab </p>
-      <p>Getting a simple example, and understanding all the pieces in this example is often the way to go</p>
-
-      <p>We will go through the example introduced on the previous slide, step by step </p>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>React-Router The "bits an pieces 1"</h2>
-    </hgroup>
-    <article>
-      <div style="margin-top: -25px;">
-        <p>This figure shows how <code>Links</code> are used to form the "menu", and how we decide where to "place"
-          content for a link, when its pressed </p>
-        <img src="images/router-links.PNG">
-        <p style="font-size: 0.8em;"><em style="color:darkblue">Important:</em>
-          There is nothing in the code above, that takes care of the actual <em>navigation</em>
-          That's the Job of the <b>Router</b>, the primary component of the React Router Library.
-      </div>
-
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>React-Router The "bits an pieces 2"</h2>
+      <h2>Exercise 1"</h2>
     </hgroup>
     <article>
       <div style="margin-top: -25px;">
-        <p>Observe how the <code>Route</code> that sets App as it's component "encapsulates" all other Routes, which
-          now become <em>children of this outer Route</em></p>
-        <img src="images/routerAndApp.PNG">
-        <p style="font-size: 0.8em;">
-          The Router make sure that only one of the nested routes are <em>active</em>. The Component for this Route
-          is what will be rendered in the App-components <code>this.props.children</code></p>
+        <h1>Exercise-1</h1>
+        <img src="../images/Demo.png">
       </div>
-
     </article>
   </slide>
+
+    <slide>
+      <hgroup>
+        <h2>React-Router The "bits an pieces 1"</h2>
+      </hgroup>
+      <article>
+        <div style="margin-top: -25px;">
+          <h1>TBD</h1>
+        </div>
+
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>React-Router The "bits an pieces 2"</h2>
+      </hgroup>
+      <article>
+        <div style="margin-top: -25px;">
+          <h1>TBD</h1>
+          <p>Observe how the <code>Route</code> that sets App as it's component "encapsulates" all other Routes, which
+            now become <em>children of this outer Route</em></p>
+          <img src="images/routerAndApp.PNG">
+          <p style="font-size: 0.8em;">
+            The Router make sure that only one of the nested routes are <em>active</em>. The Component for this Route
+            is what will be rendered in the App-components <code>this.props.children</code></p>
+        </div>
+
+      </article>
+    </slide>
 
   <slide>
     <hgroup>
-      <h2>React-Router The "bits an pieces 3"</h2>
+      <h2>Exercise 2"</h2>
     </hgroup>
     <article>
-      <div >
-        <p>This is for you to do by yourself. Use the two figures from the previous slides and the links below
-          to get the details related to the "bits and pieces" </p>
-        <ul>
-          <li><a href="https://github.com/ReactTraining/react-router/blob/v3/docs/API.md#link">Link</a>
-            <span style="font-size: 0.8em;font-style: italic">Make sure you understand how/why the "active" menu item is highlighted</span>
-          </li>
-          <li><a href="https://github.com/ReactTraining/react-router/blob/v3/docs/API.md#indexlink">IndexLink</a>
-            <span style="font-size: 0.8em;font-style: italic">Replace the <code>IndexLink</code> in the demo with a <code>Link</code> and observe the difference</span>
-          </li>
-          </li>
-          <li><a href="https://github.com/ReactTraining/react-router/blob/v3/docs/API.md#router">Router</a>
-            <span style="font-size: 0.8em;font-style: italic">Primary component of React Router. It keeps your UI and the URL in sync</span>
-          </li>
-          </li>
-          <li><a href="https://github.com/ReactTraining/react-router/blob/v3/docs/API.md#route">Route</a>
-            <span style="font-size: 0.8em;font-style: italic">
-             Make sure you understand how much a single 'r' can mean <code>Route<b>r</b></code> vs.<code>Route</code> ;-)</span>
-          </li>
-          </li>
-          <li><a href="https://github.com/ReactTraining/react-router/blob/v3/docs/API.md#indexroute-1">IndexRoute</a>
-            <span style="font-size: 0.8em;font-style: italic">
-             What happens if you only navigate to "/" ?</span></li>
-          </li>
-          <li><a href="https://github.com/ReactTraining/react-router/blob/v3/docs/API.md#hashhistory">hashhistory</a>
-            <span style="font-size: 0.8em;font-style: italic">
-             Simplest history object since it requires no additional server setup</span></li>
-          </li>
-        </ul>
-        <br/>
-        <p>You might wan't to do the <a href="https://github.com/reactjs/react-router-tutorial">React-Router
-          tutorial</a>
-          one more time, to call yourself a React-Router Expert ;-)</p>
+      <div style="margin-top: -25px;">
+        <h1>Exercise-1</h1>
+        <img src="../images/Demo.png">
       </div>
-
     </article>
   </slide>
 
+    <script>
+      $(document).ready(function () {
+        $("#view_ex2").exPresenter({
+          directory: "example2/",
+          codeClass: "prettyprint pre16",
+          codeStyle: "display:none",
+          presenterStyle: "width:900px; height:480px;",
+          btnDivStyle: "display:none"
+        });
+      })
+    </script>
 
-  <slide class="nobackground" style="background: #00163B">
-    <aside class="gdbar right"><img src="../images/logo.png" style="width: 200px;"></aside>
-    <hgroup>
+    <slide>
+      <hgroup>
+        <h2>React Routing</h2>
+        <h3>Another Example (<a href="/reactrouter2">Watch in a separate tab</a>)</h3>
+      </hgroup>
+      <article>
+        <div style="margin-top: -30px;">
+          <div id="view_ex2"></div>
+        </div>
+      </article>
+    </slide>
 
-    </hgroup>
-    <article class="flexbox  auto-fadein" style="margin-top: 25%;">
-      <h2>Rest of today; Exercises :-)</h2>
 
-    </article>
-    <p class="auto-fadein" data-config-contact>
-      <!-- populated from slide_config.json -->
+
+    <slide>
+      <hgroup>
+        <h2>React-Router The "bits an pieces 3"</h2>
+      </hgroup>
+      <article>
+        <div >
+          <p>This is for you to do by yourself. Use the two figures from the previous slides and the links below
+            to get the details related to the "bits and pieces" </p>
+          <ul>
+            <li><a href="https://github.com/ReactTraining/react-router/blob/v3/docs/API.md#link">Link</a>
+              <span style="font-size: 0.8em;font-style: italic">Make sure you understand how/why the "active" menu item is highlighted</span>
+            </li>
+            <li><a href="https://github.com/ReactTraining/react-router/blob/v3/docs/API.md#indexlink">IndexLink</a>
+              <span style="font-size: 0.8em;font-style: italic">Replace the <code>IndexLink</code> in the demo with a <code>Link</code> and observe the difference</span>
+            </li>
+            </li>
+            <li><a href="https://github.com/ReactTraining/react-router/blob/v3/docs/API.md#router">Router</a>
+              <span style="font-size: 0.8em;font-style: italic">Primary component of React Router. It keeps your UI and the URL in sync</span>
+            </li>
+            </li>
+            <li><a href="https://github.com/ReactTraining/react-router/blob/v3/docs/API.md#route">Route</a>
+              <span style="font-size: 0.8em;font-style: italic">
+               Make sure you understand how much a single 'r' can mean <code>Route<b>r</b></code> vs.<code>Route</code> ;-)</span>
+            </li>
+            </li>
+            <li><a href="https://github.com/ReactTraining/react-router/blob/v3/docs/API.md#indexroute-1">IndexRoute</a>
+              <span style="font-size: 0.8em;font-style: italic">
+               What happens if you only navigate to "/" ?</span></li>
+            </li>
+            <li><a href="https://github.com/ReactTraining/react-router/blob/v3/docs/API.md#hashhistory">hashhistory</a>
+              <span style="font-size: 0.8em;font-style: italic">
+               Simplest history object since it requires no additional server setup</span></li>
+            </li>
+          </ul>
+          <br/>
+          <p>You might wan't to do the <a href="https://github.com/reactjs/react-router-tutorial">React-Router
+            tutorial</a>
+            one more time, to call yourself a React-Router Expert ;-)</p>
+        </div>
+
+      </article>
+    </slide>
+
+
+    <slide class="nobackground" style="background: #00163B">
+      <aside class="gdbar right"><img src="../images/logo.png" style="width: 200px;"></aside>
+      <hgroup>
+
+      </hgroup>
+      <article class="flexbox  auto-fadein" style="margin-top: 25%;">
+        <h2>Rest of today; Exercises :-)</h2>
+
+      </article>
+      <p class="auto-fadein" data-config-contact>
+        <!-- populated from slide_config.json -->
     </p>
   </slide>
 

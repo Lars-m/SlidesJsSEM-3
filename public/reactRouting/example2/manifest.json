@@ -1,0 +1,24 @@
+{
+    "name": "",
+    "files": [
+      "index.html",
+      {"fileName":"Main.js","title":"Everything",
+         "include": {"start": "// Route Provider Start","end": "// Route Provider End"}
+      }
+    ],
+    "filesOnlyForPlunkr": [
+      "index.html",
+      "Main.js",
+      "style.css"
+    ],
+    "showThisAlways": "index.html",
+    "usePlunk" : "true",
+    "tags": ["React","Routing"],
+    "description" : ""
+
+}
+
+
+
+
+

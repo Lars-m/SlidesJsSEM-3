@@ -1,0 +1,16 @@
+{
+    "name": "Example Hoisting",
+    "files": [
+      "js1.js",
+      "closure.js"
+    ],
+    "filesOnlyForPlunkr": [
+        "index.html",
+        "js1.js",
+        "closure.js"
+    ],
+    "showThisAlways": "index.html",
+    "usePlunk" : "true",
+    "tags": ["javascript","Closure,example"],
+    "description" : "JavaScript - Example - Closures"
+}

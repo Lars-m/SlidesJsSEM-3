@@ -1,0 +1,22 @@
+{
+  "name": "ListAndKeys",
+  "files": [
+    {"fileName":"App.js","title":"Component with a table",
+      "include": {"start": "//start constructor","end": "//end constructor"}
+    },
+    {"fileName":"App.js","title":"Map & Filter",
+      "include": {"start": "//map and filter start","end": "//map and filter end"}
+    },
+    {"fileName":"App.js","title":"Passing data to component",
+      "include": {"start": "//start passing in data","end": "//end passing in data"}
+    }
+  ],
+  "filesOnlyForPlunkr": [
+    "index.html",
+    "App.js"
+  ],
+  "showThisAlways": "index.html",
+  "usePlunk": "true",
+  "tags": ["React"],
+  "description": "React"
+}

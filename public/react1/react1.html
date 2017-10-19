@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.13/angular.min.js"></script>-->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" media="all" href="../theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="../theme/css/phone.css">
+
+  <script src="code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="../js/jquery-1.11.1.min.js"></script>
+  <script src="../js/presenter.js"></script>
+
+  <base target="_blank">
+  <style>
+    code {
+      color: darkblue;
+    }
+  </style>
+
+  <!-- This opens all links in a new tab. -->
+  <script data-main="../js/slides" src="../js/require-1.0.8.min.js"></script>
+
+  <!--In order to have more than one slideset in the project-->
+  <script src="slides.js"></script>
+
+</head>
+
+<!--Setup Angular for the full slide-set-->
+<!--<body ng-app="SlideApp" style="opacity: 0">-->
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="title-slide segue nobackground" style="background: #00163B">
+    <aside class="gdbar"><img src="../images/logo.png" style="width: 200px;"></aside>
+    <hgroup class="auto-fadein" style="color: white;">
+      <div style="float: left;">
+        <h1 data-config-title></h1>
+        <h2 data-config-subtitle></h2>
+        <p data-config-presenter></p>
+      </div>
+      <div style="float:left;margin-left: 5em;"><img src="images/React-JS.png" style="float:left;width: 200px;">
+      </div>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>We already know Angularjs</h2>
+      <h3>So - Why spend time on "just another" front-end "framework"</h3>
+    </hgroup>
+
+    <article>
+      <p style="margin-top: -30px;">
+        AngularJS was (and to a large degree still, is) a great framework, but time and its popularity (for big-scale
+        applications)
+        has proven that it had a number of problems, which could not be fixed easily.
+      </p>
+      <p>See links for details</p>
+      <ul>
+        <li><a href="https://medium.com/@mnemon1ck/why-you-should-not-use-angularjs-1df5ddf6fc99">Why you should not use
+          AngularJS</a></li>
+        <li><a href="https://larseidnes.com/2014/11/05/angularjs-the-bad-parts/">AngularJS: The Bad Parts</a></li>
+      </ul>
+
+      <p>As a consequence of these problems Google rewrote the entire framework into Angular 2, but Angular 2 is not
+        just a
+        new version, but actually more like a new framework</p>
+      <p>So in time Angular developers must expect to; either switch to Angular 2 or something "similar"</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Front-end JavaScript frameworks</h2>
+      <h3>Which one should I pick ???????????</h3>
+    </hgroup>
+
+    <article>
+      <p style="margin-top: -30px;">
+        <a href="https://github.com/showcases/front-end-javascript-frameworks?s=stars">
+          Front-end JavaScript frameworks (Does not include Angular 2)</a>
+      </p>
+      <p>
+        <a href="https://trends.google.com/trends/explore?q=angularjs,%2Fm%2F012l1vxv,vuejs,angular2">
+          Google Trends (Angularjs, angular2, React, Vuejs)</a>
+        </a>
+      </p>
+      <p>
+        <a href="https://it.jobindex.dk/jobsoegning?q=angularjs&supid=1">Job-index.dk</a>a</p>
+        <!--<iframe style="width: 32%;height: 450px;-webkit-transform:scale(0.7);-moz-transform-scale(0.7);"-->
+                <!--src="https://it.jobindex.dk/jobsoegning?q=angularjs&supid=1">-->
+        <!--</iframe>-->
+        <!--<iframe style="width: 32%;height: 450px;-webkit-transform:scale(0.7);-moz-transform-scale(0.7);"-->
+                <!--src="https://it.jobindex.dk/jobsoegning?q=react&supid=1">-->
+        <!--</iframe>-->
+        <!--<iframe style="width: 32%;height: 450px;-webkit-transform:scale(0.7);-moz-transform-scale(0.7);"-->
+                <!--src="https://it.jobindex.dk/jobsoegning?q=vue&supid=1">-->
+        <!--</iframe>-->
+      </p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Front-end JavaScript frameworks</h2>
+    </hgroup>
+    <article>
+      <h3 style="color: #2a6496; font-size: 2em;margin-top: -30px;">Which one should I pick ???????????</h3>
+      <p>Obviously there is no single right answer to this question</p>
+      <ul>
+        <li>Angular 2 looks really cool, using the component strategy (like React) and TypeScript.
+          Watch this (3min.) <a href="https://www.youtube.com/watch?v=fBeuaDOBk3s">video</a> for whats new in Angular 2
+        </li>
+        <li>React has a lot of momentum right now (probably helped by frustrations among Angular 1x developers)</li>
+        <li>And as we have seen there are many other qualified alternatives</li>
+      </ul>
+      <br/>
+      <p style="color: #2a6496; margin-top: -30px;">
+        The only guarantee I can give you is; If you end up as a front-end developer, neither of the frameworks
+        mentioned,
+        will be your last Front End Framework ;-)
+      </p>
+      <p>Unless you have chosen an alternative (which you could do) this period will focus on React</p>
+    </article>
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2>React vs Angular 1.x</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Angular was a framework, React is only a view-library, so:
+          <ul>
+            <li>Don't look for concepts like Controllers, Services Factories, Filters etc.</li>
+            <li>Don't look for services like $HTTP. How you connect to a backend is "your problem"</li>
+          </ul>
+        </li>
+        <li>This one you either going to love or hate:
+          <ul>
+            <li>Angular 1.x had a very CLEAR separation between HTML and JavaScript, with the ng-xx directives as the
+              way to connect the two
+            </li>
+            <li>React has code and markup in one place (in your JavaScript)</li>
+          </ul>
+        </li>
+        <li>React has (like Angular 2) no two way binding</li>
+        <li>React is a lot like "back to JavaScript". You really need to be a skilled JS developer to do modern
+          React :-)
+        </li>
+        <li>Like Angular, React does not ship with a Router component, so you must choose one (there is a obvious
+          candidate)
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>React vs React Native</h2>
+    </hgroup>
+    <article>
+      <div class="row">
+        <div class="col-md-9">
+          <p>When you Google for React, be aware of; that a great deal of the hits you get is for <b>React Native</b>
+            and
+            not plain React</p>
+
+          <p>React Native is a way to build <b>native</b> mobile apps (IOS or Android) with React and <em>not</em>
+            Hybrid
+            Applications as we have
+            done with Ionic</p>
+          <ul>
+            <li>The ionic strategy toward mobile development was <em>Write once, Use anywhere</em></li>
+            <li>React's strategy is very different <em>Learn once, write anywhere</em> which is a consequence of being
+              "true
+              native"
+            </li>
+          </ul>
+          <p>We will not have time for React Native this semester</p>
+        </div>
+        <div class="col-md-3">
+          <img style="width: 100%" src="images/NativeVSNot.PNG">
+        </div>
+      </div>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>React - Using ES6+7 + JSX</h2>
+    </hgroup>
+    <article>
+      <p style="margin-top: -25px;">Babel and Webpack</p>
+      <p>As you should have noticed from the initial React Exercises, React relies on:</p>
+      <ul>
+        <li><b>JSX Support</b> (we will come back to JSX)</li>
+        <li><b>ES2015</b> and sometimes even <b>ES2016</b> features</li>
+      </ul>
+      <p>We will use <b>Babel</b> and <b>Webpack</b> (to assemble code into a single file, and to provide a development
+        server)</p>
+      <p>We will <b>node</b>, and <b>npm</b> to install all required dependencies</p>
+      <br/>
+      <p>The easiest way to do all this, is to use Facebook's <code>Create React App</code> seed.<br/>
+        This is what I recommend for this semester, since it almost completely make Babel, and WebPack transparent to us
+      </p>
+    </article>
+  </slide>
+  <slide>
+    <hgroup>
+      <h2>React - The Virtual Dom</h2>
+    </hgroup>
+    <article>
+      <p style="margin-top: -30px;">Manipulating the DOM is a fundamental part of all modern, interactive web.
+        DOM manipulation unfortunately, is much slower than plain JS-operations</p>
+      <p>React's solution to this problem, is a Virtual Dom. For every DOM object, there is a corresponding "virtual DOM
+        object."
+        A virtual DOM object is a representation of a DOM object, like a lightweight copy.</p>
+      <div class="row">
+        <div class="col-md-7">
+          <ul>
+            <li>The entire virtual DOM gets updated</li>
+            <li>The virtual DOM gets compared to what it looked like before you updated it.
+              React figures out which objects have changed
+            </li>
+            <li>The changed objects, and the changed objects only, get updated on the real DOM</li>
+            <li>Changes on the real DOM cause the screen to change</li>
+          </ul>
+        </div>
+        <div class="col-md-5">
+          <img src="images/virtualDom.PNG" style="width: 100%"/>
+        </div>
+      </div>
+      <footer class="source">
+
+        <a href="http://stackoverflow.com/questions/21109361/why-is-reacts-concept-of-virtual-dom-said-to-be-more-performant-than-dirty-mode">
+          The Virtual Dom on StackOverflow
+        </a> &nbsp;, &nbsp;&nbsp; <a href="https://www.codecademy.com/articles/react-virtual-dom">The Virtual Dom</a>
+      </footer>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>React - <a href="https://facebook.github.io/react/docs/components-and-props.html">Components</a></h2>
+    </hgroup>
+    <article>
+      <div style="font-size: 0.9em;">
+        <p style="margin-top: -25px;">Components are the heart and soul of React. They let you split the UI into
+          independent, reusable pieces, and
+          think about each piece in isolation.</p>
+        <p>Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called "props")
+          and return React elements describing what should appear on the screen.</p>
+      </div>
+      <div class="row build">
+        <div class="col-md-6">
+          <p style="font-size: 0.9em; color: #2a6496">Component written as a ES6 Class<br/>
+            <span style="font-size: small">Use only when features from base class is needed (often state)</span>
+          </p>
+
+          <pre class="prettyPrint pre18">
+class Welcome extends React.Component {
+  render() {
+    return <b>(</b>
+         &lt;h1&gt;Hello, {this.props.name}&lt;/h1&gt;
+        <b>)</b>
+  }}</pre>
+          <p style="font-size: 0.9em; color: #2a6496">Functional Component as a JS-function<br/>
+
+          </p>
+          <pre class="prettyPrint pre18">
+function Welcome(props) {
+  return &lt;h1&gt;Hello, {this.props.name}&lt;/h1&gt;
+}</pre>
+          <span style="font-size: small">
+              This is a valid React component because it accepts a single "props" object argument
+              with data and returns a React element</span></div>
+        <div class="col-md-6">
+          <p style="color:#2a6496;font-size: 0.9em;">Important things to remember:</p>
+          <div style="font-size: smaller">
+            <p>
+              Always start component names with a capital letter. <code>&lt;div /&gt;</code>, as an example, represents
+              a DOM tag, but <code>&lt;Welcome /&gt;</code>
+              represents a component.
+
+            </p>
+            <p>
+              The parentheses around the return statement are needed because of JavaScript's automatic semicolon
+              insertion.
+              Without them, JavaScript would ignore all following lines.<br/>
+              If the JSX is a one-liner (on the same line as the return statement) parentheses are not needed.
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </slide>
+  <slide>
+    <hgroup>
+      <h2>React Components</h2>
+    </hgroup>
+    <article>
+      <p style="margin-top: -30px;"><a
+              href="https://facebook.github.io/react/docs/components-and-props.html#composing-components">
+        Composing React Components</a> - Like playing with Lego :-)</p>
+      <div class="row">
+        <div class="col-md-8">
+       <pre class="prettyPrint pre20">
+
+function Welcome(props) {
+  return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;;
+}
+
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;Welcome name=&quot;Sara&quot; /&gt;
+      &lt;Welcome name=&quot;Lucas&quot; /&gt;
+      &lt;Welcome name=&quot;Emma&quot; /&gt;
+    &lt;/div&gt;
+  );
+}
+
+ReactDOM.render(
+  &lt;App /&gt;,
+  document.getElementById('root')
+);</pre>
+        </div>
+        <div class="col-md-4">
+          <img style="width: 90%" src="images/likeLego.PNG">
+        </div>
+      </div>
+    </article>
+  </slide>
+
+
+  <script>
+    $(document).ready(function () {
+      $("#jsx").exPresenter({
+        directory: "examples/jsx/",
+        codeClass: "prettyprint pre18",
+        codeStyle: "float:left;margin-right:5px;margin-bottom:5px;width:50%;min-height: 300px;background-color:white;",
+        presenterStyle: "float:right;width:47%;height: 120px;font-family:monospaced;margin-bottom:10px;margin-top:-30px;",
+        commentStyle: "float:right;width:47%;font-size:20px;"
+      });
+    });
+  </script>
+
+  <slide>
+    <hgroup>
+      <h2><a href="https://facebook.github.io/react/docs/introducing-jsx.html">JSX</a></h2>
+    </hgroup>
+    <article>
+      <div style="font-size: 0.9em;margin-top: -30px;">
+        <p> The tag-syntax used by React is called JSX, and it is a <em>syntax extension</em> to JavaScript.<br/>
+          It's React's recommended way to describe what the UI should look like. </p>
+        <p>JSX is a kind template language, but comes with the full power of JavaScript.
+          JSX produces React "elements", which is what can be rendered by React</p>
+        </p>
+      </div>
+      <div>
+        <div id="jsx"></div>
+      </div>
+    </article>
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2>Props</h2>
+    </hgroup>
+    <article>
+      <div class="row">
+        <div class="col-md-6">
+          <pre>
+//Component using <b>props</b>
+function Welcome(<b>props</b>) {
+  return &lt;h1&gt;Hello, <b>{props.name}</b>&lt;/h1&gt;;
+}
+
+//Passing values to props
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;Welcome <b>name=&quot;Sara&quot;</b> /&gt;
+      &lt;Welcome <b>name=&quot;Cahal&quot;</b> /&gt;
+      &lt;Welcome <b>name=&quot;Edite&quot;</b> /&gt;
+    &lt;/div&gt;
+  );
+}
+          </pre>
+        </div>
+        <div class="col-md-6">
+          <p><b>Props:</b> </br>
+            Remember, conceptually, components are like JavaScript functions.
+            They accept arbitrary inputs called <b style="color:darkblue">"props"</b> and return React elements
+            describing what should appear on the screen</p>
+          <p><b>Props are Read-Only:</b> </br>
+            Whether a component is declared as a function or a class, it must <em>never modify its own props</em>
+          </p>
+          <p></p>
+        </div>
+      </div>
+    </article>
+  </slide>
+
+
+  <script>
+    $(document).ready(function () {
+      $("#expropval").exPresenter({
+        directory: "examples/propsval/",
+        codeClass: "prettyprint pre18",
+        codeStyle: "float:left;margin-right:5px;margin-bottom:5px;width:60%;min-height: 300px;background-color:white;",
+        presenterStyle: "float:right;width:35%;height: 150px;margin-bottom:10px;",
+        commentStyle: "float:right;width:35%;font-size:20px;"
+      });
+    });
+  </script>
+
+  <slide>
+    <hgroup>
+      <h2>Props, Validation and Default values</h2>
+    </hgroup>
+    <article>
+      <div style="font-size: 0.8em;margin-top: -30px;">
+        <p><b>Typechecking With PropTypes</b></p>
+        <p>
+          You can catch a lot of bugs with typechecking, either by using
+          extensions like <b>TypeScript</b> or <b>Flow</b> or without those,
+          React even has some built-in typechecking abilities. </br>
+          To run typechecking on the props for a component, you can assign the special propTypes property:
+
+        </p>
+        <p><b>Default Prop Values:</b></p>
+        <p>
+          You can define default values for your props by assigning to the special <b>defaultProps</b> property
+        </p>
+      </div>
+      <div>
+        <div id="expropval"></div>
+      </div>
+    </article>
+  </slide>
+
+
+  <script>
+    $(document).ready(function () {
+      $("#ex1").exPresenter({
+        directory: "examples/state/",
+        codeClass: "prettyprint pre16",
+        codeStyle: "float:left;margin-right:5px;margin-bottom:5px;width:60%;min-height: 300px;background-color:white;",
+        presenterStyle: "float:right;width:35%;height: 75px;margin-bottom:10px;",
+        commentStyle: "float:right;width:35%;font-size:20px;"
+      });
+    });
+  </script>
+
+  <slide>
+    <hgroup>
+      <h2>State</h2>
+    </hgroup>
+    <article>
+      <div style="font-size: 0.9em;margin-top: -30px;">
+        <p>
+          There are two types of data that control a component: props and state. <b>props</b> are set by the parent
+          and they are <em>fixed throughout the lifetime</em> of a component.</p>
+        <p>
+          For data that is going to change, we have to use <b>state</b>
+          In general, you should initialize state in the constructor, and then call setState when you want to change it.
+        </p>
+      </div>
+      <div>
+        <div id="ex1"></div>
+      </div>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>State 2</h2>
+    </hgroup>
+    <article>
+      <p style="color:#2a6496;margin-top: -20px">Important things to know about <b>state</b> in react</p>
+      <div >
+
+        <p>The only place you can set state directly is in the constructor</p>
+        <p>Outside the constructor you must set state via the method: <span style="font-weight: bold"><code>this.setState(..);</code></span>
+        </p>
+        <p style="text-align: center">
+          <code>this.setState({ showText: !this.state.showText });</code></p>
+        <p style="text-align: center;font-size: small">Observe, the method takes an object as argument</p>
+        <p>Calling <code>this.setState(..);</code> will <b>Force a re-render</b> (redraw the Component)</p>
+        <p>The only (non-recommended) alternative way with (plain) React to force a re-render is by calling:
+          <span style="margin-top:3px;font-weight: bold"><code>forceUpdate()</code></span></p>
+        <br/>
+        <p>External libraries like <b>Mobx</b> can simplify state-handling</p>
+
+      </div>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2><a href="https://facebook.github.io/react/docs/react-component.html">The Component Lifecycle</a></h2>
+    </hgroup>
+    <article>
+      <p style="font-size: 0.9em; margin-top: -15px;">
+        Each component has several "lifecycle methods" that can be overrided to run code at particular times in the process.
+        Methods prefixed with <b>will</b> are called right before something happens, and methods prefixed with <b>did</b>
+        are called right after something happens.
+      </p>
+      <div class="row">
+        <style>
+          code {font-size: .75em;}
+        </style>
+        <div class="col-md-4">
+          <p style="color: #2b669a">Mounting</p>
+          <p><code>constructor()</code></p>
+          <p><code>componentWillMount()</code></p>
+          <p><code>render()</code></p>
+          <p><code>componentDidMount()</code></p>
+          <p style="font-size: .7em;font-style: italic">
+            Called when an instance of a component is being created and inserted into the DOM
+          </p>
+        </div>
+        <div class="col-md-4">
+          <p style="color: #2b669a">Updating</p>
+
+          <p><code>componentWillReceiveProps()</code></p>
+          <p><code>shouldComponentUpdate()</code></p>
+          <p><code>componentWillUpdate()</code></p>
+          <p><code>render()</code></p>
+          <p><code>componentDidUpdate()</code></p>
+          <p style="font-size: .7em;font-style: italic">
+            An update can be caused by changes to props or state.
+            These methods are called when a component is being re-rendered</p>
+          <p style="font-size: .75em;font-style: italic">
+        </div>
+        <div class="col-md-4">
+          <p style="color: #2b669a">Unmounting</p>
+          <p><code>componentWillUnmount()</code></p>
+          <p style="font-size: .7em;font-style: italic">
+            Called when a component is being removed from the DOM
+          </p>
+        </div>
+      </div>
+    </article>
+  </slide>
+
+  <script>
+    $(document).ready(function () {
+      $("#table").exPresenter({
+        directory: "examples/listkey1/",
+        codeClass: "prettyprint pre16",
+        codeStyle: "float:left;margin-right:5px;margin-bottom:5px;width:60%;min-height: 300px;background-color:white;",
+        presenterStyle: "float:right;width:35%;height: 165px;margin-bottom:10px;margin-top:-10px;",
+        commentStyle: "float:right;width:35%;font-size:20px;"
+      });
+    });
+  </script>
+
+  <slide>
+    <hgroup>
+      <h2><a href="https://facebook.github.io/react/docs/lists-and-keys.html">Lists and Keys</a></h2>
+    </hgroup>
+    <article>
+      <div style="margin-top: -10px;">
+        <p>
+          You use <code>map</code>, <code>filter</code> and <code>reduce</code> to create lists
+          (ul's tables etc.) with React
+        </p>
+      </div>
+      <div>
+        <div id="table"></div>
+      </div>
+    </article>
+  </slide>
+
+  <script>
+    $(document).ready(function () {
+      $("#table2").exPresenter({
+        directory: "examples/listkey2/",
+        codeClass: "prettyprint pre16",
+        codeStyle: "float:left;margin-right:5px;margin-bottom:5px;width:70%;min-height: 300px;background-color:white;",
+        presenterStyle: "float:right;width:28%;height: 265px;margin-bottom:10px;margin-top:-10px;"
+      });
+    });
+  </script>
+
+  <slide>
+    <hgroup>
+      <h2>Lists</h2>
+      <h3>Chaining <code>map</code> and <code>filter</code></h3>
+    </hgroup>
+    <article>
+      <div style="margin-top: -20px;">
+      </div>
+      <div>
+        <div id="table2"></div>
+      </div>
+    </article>
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2><a href="https://facebook.github.io/react/docs/forms.html#controlled-components">React Forms</a></h2>
+    </hgroup>
+    <article>
+      <div style="margin-top: -25px;">
+        <p>HTML form elements work a bit differently from other DOM elements in React,
+          because form elements such as <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code>
+          typically maintain their own state and update it based on user input.</p>
+        <p>
+          In React, mutable state is typically kept in the state property of components, and only updated with <code>setState()</code>.
+        </p>
+      </div>
+      <div class="build">
+        <div>
+          <p>
+            React suggests we combine the two by making the React state be the</p>
+          <div style="text-align: center; font-size: larger; color: #2a6496">"single source of truth"</div>
+        </div>
+        <div>
+          <br/>
+          <p>
+            Then the React component that renders a form also controls what happens in that form on subsequent user
+            input.</p>
+          <p>An input form element whose value is controlled by React in this way is called a:</p>
+          <div style="text-align: center; font-size: larger; color: #2a6496">"controlled component"</div>
+        </div>
+      </div>
+    </article>
+  </slide>
+
+
+  <script>
+    $(document).ready(function () {
+      $("#form1").exPresenter({
+        directory: "examples/form/",
+        codeClass: "prettyprint pre16",
+        codeStyle: "float:left;margin-right:5px;margin-bottom:5px;width:60%;min-height: 300px;background-color:white;",
+        presenterStyle: "float:right;width:38%;height: 130px;margin-bottom:15px;",
+        commentStyle: "float:right;width:38%;font-size:20px;"
+      });
+    });
+  </script>
+
+  <slide>
+    <hgroup>
+      <h2>React Forms</h2>
+    </hgroup>
+    <article>
+      <div style="font-size: 0.8em;margin-top: -30px;">
+        <p><b>How to make Controlled Components</b></p>
+        <p>
+
+        </p>
+
+      </div>
+      <div>
+        <div id="form1"></div>
+      </div>
+    </article>
+  </slide>
+
+  <script>
+    $(document).ready(function () {
+      $("#form2").exPresenter({
+        directory: "examples/form2/",
+        codeClass: "prettyprint pre16",
+        codeStyle: "float:left;margin-right:5px;margin-bottom:5px;width:70%;min-height: 300px;background-color:white;",
+        presenterStyle: "float:right;width:28%;height: 200px;margin-bottom:15px;",
+        commentStyle: "float:right;width:28%;font-size:20px;"
+      });
+    });
+  </script>
+
+  <slide>
+    <hgroup>
+      <h2>React Forms</h2>
+    </hgroup>
+    <article>
+      <div style="font-size: 0.8em;margin-top: -30px;">
+        <p><b>Forms with multiple inputs</b></p>
+        <p>
+
+        </p>
+
+      </div>
+      <div>
+        <div id="form2"></div>
+      </div>
+    </article>
+  </slide>
+
+  <script>
+    $(document).ready(function () {
+      $("#tictactoe").exPresenter({
+        directory: "examples/tictactoe/",
+        codeClass: "pre16",
+        codeStyle: "float:left;overflow: auto;margin-right:5px;margin-bottom:5px;width:70%;height:400px;background-color:white;",
+        presenterStyle: "float:right;width:28%;height: 300px;margin-bottom:15px;",
+        commentStyle: "float:right;width:28%;font-size:20px;"
+      });
+    });
+  </script>
+
+  <slide>
+    <hgroup>
+      <h2>Events with React</h2>
+    </hgroup>
+    <article>
+      <div style="margin-top: -20px;">
+        <p>
+          We will use React's tic-tac-toe example as an introduction to event handling
+        </p>
+      </div>
+      <div>
+        <div id="tictactoe"></div>
+      </div>
+    </article>
+  </slide>
+
+
+  <script>
+    $(document).ready(function () {
+      $("#tictac2").exPresenter({
+        directory: "examples/tictactoe_engine/",
+        codeClass: "pre16",
+        codeStyle: "float:left;overflow: auto;margin-right:5px;margin-bottom:5px;width:70%;height:400px;background-color:white;",
+        presenterStyle: "float:right;width:28%;height: 300px;margin-bottom:15px;",
+        commentStyle: "float:right;width:28%;font-size:20px;"
+      });
+    });
+  </script>
+
+  <slide>
+    <hgroup>
+      <h2>Events with React 2</h2>
+      <h3>Simplify event handling with stores/factories/engines</h3>
+    </hgroup>
+    <article>
+      <div style="margin-top: -30px;font-size: 0.8em;">
+        <p>
+          Isolating data/business-logic in separate stores (or as for this example, a GameEngine) is something missing
+          in much to much "simpler" React examples
+        </p>
+        <p>This is what i always recommend, even if you don't use Redux, Flux or MobX, and don't worry about doing
+        <code>this.forceUpdate()</code></p>
+      </div>
+      <div>
+        <div id="tictac2"></div>
+      </div>
+    </article>
+  </slide>
+
+  <script>
+    $(document).ready(function () {
+      $("#children").exPresenter({
+        directory: "examples/children/",
+        codeClass: "pre16",
+        codeStyle: "float:left;margin-right:5px;margin-bottom:5px;width:60%;min-height: 300px;background-color:white;",
+        presenterStyle: "float:right;width:38%;height: 200px;margin-bottom:15px;",
+        commentStyle: "float:right;width:38%;font-size:20px;"
+      });
+    });
+  </script>
+  <slide>
+    <hgroup>
+      <h2>Children</h2>
+    </hgroup>
+    <article>
+      <div style="margin-top: -20px;">
+        <p>
+          In JSX, expressions that contain both an opening tag and a closing tag, the content between those tags is
+          passed as a
+          special prop: <code>props.children</code>
+        </p>
+      </div>
+      <div>
+        <div id="children"></div>
+      </div>
+    </article>
+  </slide>
+
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<!--[if IE]>
+<script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+<script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>

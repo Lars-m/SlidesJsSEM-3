@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.13/angular.min.js"></script>-->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" media="all" href="../theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="../theme/css/phone.css">
+
+  <script src="../js/jquery-1.11.1.min.js"></script>
+  <script src="../js/presenter.js"></script>
+
+  <base target="_blank">
+  <style>
+    code {
+      color: darkblue;
+    }
+  </style>
+
+  <!-- This opens all links in a new tab. -->
+  <script data-main="../js/slides" src="../js/require-1.0.8.min.js"></script>
+
+  <!--In order to have more than one slideset in the project-->
+  <script src="slides.js"></script>
+
+</head>
+
+<!--Setup Angular for the full slide-set-->
+<!--<body ng-app="SlideApp" style="opacity: 0">-->
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="title-slide segue nobackground" style="background: #00163B">
+    <aside class="gdbar"><img src="../images/logo.png" style="width: 200px;"></aside>
+    <hgroup class="auto-fadein" style="color: white;">
+      <div style="float: left;">
+        <h1 data-config-title style="float:left;"></h1>
+
+        <h2 data-config-subtitle></h2>
+
+        <p data-config-presenter></p>
+      </div>
+      <div style="float:left;margin-left: 2em;"><img src="images/javascript.png" style="float:left"></div>
+    </hgroup>
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2>JavaScript </h2>
+    </hgroup>
+
+    <article>
+      <div style="margin-top: 0px;">The next two days we will add to your JavaScripts skills (remember 2. semester
+        ;-)
+      </div>
+      <br/>
+      <p>Today:</p>
+      <div>
+        <ul>
+          <li>Short summary from 2. semester, what is JavaScript (<code>var</code> and forgetting <code>var</code>,
+            == and ===, lack of type check, <code>null</code> and <code>undefined</code> etc.)
+          </li>
+          <li>Functions and Callbacks and asynchronous Callbacks</li>
+          <li>Variable/function-Hoisting</li>
+          <li>The JavaScript Array methods</li>
+          <li><code>this</code> in JavaScript and how it differs from what we know from Java/.net.</li>
+          <li>Function Closures and the JavaScript Module Pattern</li>
+        </ul>
+      </div>
+      <p>Tomorrow:</p>
+      <ul>
+        <li>JavaScript Event Handling</li>
+        <li>The DOM</li>
+      </ul>
+    </article>
+
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>JavaScript- this semester </h2>
+    </hgroup>
+
+    <article>
+      <ul class="build">
+        <li>JavaScript is THE Scripting Language of the WEB</li>
+        <li>
+          <div class="row">
+            <div class="col-md-7">
+              But today JavaScript is used <b>everywhere</b></br>
+              We will however only focus on <em>browsers</em> this semester
+            </div>
+            <div class="col-md-5">
+              <img style="width: 60%;" src="images/jseverywhere.PNG">
+            </div>
+          </div>
+        </li>
+        <li>JavaScript is a language which (today) evolves very quickly
+          <a href="https://www.w3schools.com/js/js_versions.asp">JS Versions</a></li>
+        <li>In this module we will only focus on ES5, but in module-3 we will also introduce ES6+7 features
+          and "tricks" to use them in a way so "all" browsers are supported
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Where to find info </h2>
+    </hgroup>
+
+    <article>
+      <div style="margin-top: -20px;">
+        As always <em>Google</em> is our friend, but there are so much JavaScript-info out there so how to chose?
+      </div>
+      <br/>
+
+      <div>
+        <p>if you Google <em>JavaScript</em> + <em>a specific topic</em>, for example "JavaScript DOM" you will see that
+          your
+          first hits almost always is either from <a href="https://www.w3schools.com/js/default.asp">w3schools</a>
+          or <a href="https://developer.mozilla.org/en-US/">MDN</a></p>
+        <p>TRY</p>
+        <p>Some quick guidelines for what to go for:</p>
+        <ul>
+          <li>Mozilla Developer Networks provides the newest and updated information,
+            but can rather technical and difficult to read (with no annoying commercials)
+          </li>
+          <li>W3Schools is often easier to navigate in. Information is often not updated, but there are "tons" of
+            examples
+            which you can execute directly from the web-site
+          </li>
+          <li><b>My advice:</b> Always go for MDN first, and if too complex, go to W3schools next</li>
+          <li>And then; obviously there are many other great sources of there (stackoverflow.com)</li>
+
+        </ul>
+      </div>
+    </article>
+
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>JavaScript (some of) the strange things </h2>
+    </hgroup>
+    <article>
+      <div><b>var and forgetting var</b>
+        <pre class="prettyprint pre18">
+var number = 4; //OK
+// but what happens if we forget var ?
+function forgotVar() { name = "Donald Duck"}</pre>
+        <div style="margin-top: 10px;">
+          <b>JavaScript has types, but is loosely typed. Type Coercion</b>
+          <pre class="prettyprint pre18">
+var a = 123.45;
+a = a * 10;
+a = a + "Hello";
+"37" - 7
+"37" + 7</pre>
+        </div>
+        <div style="margin-top: 10px;">
+          <b>Type coercion also occurs when doing comparisons.
+            We can, however, forbid type coercion by using the === n</b>
+          <pre class="prettyprint pre18">
+1 == true;  // = true  
+1 === true; // = false    
+7 == "7";   // = true  
+7 === "7";  // = false; 
+</pre>
+        </div>
+      </div>
+
+    </article>
+  </slide>
+  <slide>
+    <hgroup>
+      <h2><code>null</code> and <code>undefined</code></h2>
+    </hgroup>
+    <article>
+      <p style="margin-top: -25px;">Uninitialized properties in JavaScript are <b>NOT set to null as the default value</b>.
+        A property, when it has no definition, is <code>undefined</code>
+        Null values must be set explicitly
+      </p>
+      <pre class="prettyprint pre18">
+var x;
+x == null       //true  (Because of type cohesion)
+x == undefined  //true
+x === null      //false (was never set to a value)
+x === undefined //true
+
+x = null;
+x == null       //true
+x == undefined  //true (Because of type cohesion)
+x === null      //true
+x === undefined //false </pre>
+
+      <p style="margin-top: 10px;">Use the <code>typeof</code> operator to check whether a variable is undefined</p>
+      <pre class="prettyprint pre18">
+var myVar;  //Declared, but undefined
+if (typeof myVar === 'undefined'){
+  console.log("myVar is undefined");
+} </pre>
+
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>JavaScript Functions</h2>
+
+      <h3>JavaScript Functions as First Class Members</h3>
+    </hgroup>
+    <div class="build" style="margin-top: 20px;font-size: 22px;">
+      <div>
+        <div class="row">
+          <div class="col-md-6">In Java we can have variables that points to an object</div>
+          <div class="col-md-6">In JavaScript we can have variables that points to a function</div>
+        </div>
+        <div class="row">
+          <div class="col-md-6"><code>A myA = new A();</code></div>
+          <div class="col-md-6"><code>var f1 = function(){...}</code></div>
+        </div>
+      </div>
+      <div style="margin-top: 10px;">
+        <div class="row">
+          <div class="col-md-6">
+            ">In Java we can pass objects as parameters
+          </div>
+          <div class="col-md-6">In JavaScript we can pass functions as parameters</div>
+        </div>
+        <div class="row">
+          <div class="col-md-6"><code>someFunction(myA);</code></div>
+          <div class="col-md-6"><code>someFunction(f1)</code></div>
+        </div>
+      </div>
+      <div style="margin-top: 10px;">
+        <div class="row">
+          <div class="col-md-6">In Java we can return objects from methods</div>
+          <div class="col-md-6">In JavaScript we can return functions from functions</div>
+        </div>
+        <div class="row">
+          <div class="col-md-6"><code>A method(){<br/>&nbsp;&nbsp;return new A(); <br/>}</code></div>
+          <div class="col-md-6"><code>function someFunction(){<br/>
+            &nbsp;return function() {...};<br/>}
+          </code></div>
+        </div>
+      </div>
+      <div style="margin-top: 10px;">
+        <div class="row">
+          <div style="padding:2px;" class="col-md-6">In Java we can have nested classes</div>
+          <div class="col-md-6">In JavaScript we can have nested functions</div>
+        </div>
+        <div class="row">
+          <div class="col-md-6"><code>class A {<br/>
+            &nbsp;class Inner { .. } <br/>}</code></div>
+          <div class="col-md-6"><code>function someFunction(){<br/>
+            &nbsp;function anotherFunction() &nbsp;{...};<br/>}
+          </code></div>
+        </div>
+      </div>
+      <div>
+        <h3 style="color: #000066;margin-top: 10px;">In JavaScript Functions are <b>First Class Members</b></h3>
+      </div>
+    </div>
+    <article>
+    </article>
+  </slide>
+  <slide>
+    <hgroup>
+      <h2>Declaring functions</h2>
+    </hgroup>
+    <div style="margin-top: 20px;font-size: 22px;">
+      <div>
+        <div class="row">
+          <div class="col-md-2">Function Declarations</div>
+          <div class="col-md-10"><pre class="prettyprint pre18">
+//Observe: no return type, no type on parameters
+function add(n1, n2){
+   return n1 +n2;
+}</pre>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">Function Expression</div>
+          <div class="col-md-10"><pre class="prettyprint pre18">
+var sub = function(n1,n2){
+  return n1 - n2
+}          </pre>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">Callback example</div>
+          <div class="col-md-10"><pre class="prettyprint pre18">
+var cb = function(n1,n2, callback){
+  return "Result from the two numbers: "+n1+"+"+n2+"="+callback(n1,n2);
+}; </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="build" style="margin-top: 20px;font-size: 22px;">
+      <div>
+        <div class="row">
+          <div class="col-md-2"><code>What will these examples print
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></code></div>
+          <div class="build">
+            <div class="col-md-10" class="build"><pre class="prettyprint pre18">
+console.log( add(1,2) )     // What will this print?</pre>
+            </div>
+            <div class="col-md-10"><pre class="prettyprint pre18" style="margin:0px;">
+console.log( add )          // What will it print? </pre>
+            </div>
+            <div class="col-md-10"><pre class="prettyprint pre18">
+console.log( add(1,2,3) ) ; // What will it print?</pre>
+            </div>
+            <div class="col-md-10"><pre class="prettyprint pre18">
+console.log( add(1) );	  // What will it print?</pre>
+            </div>
+            <div class="col-md-10"><pre class="prettyprint pre18">
+console.log( f1(3,3,add) ); // What will it print?</pre>
+            </div>
+            <div class="col-md-10"><pre class="prettyprint pre18">
+console.log( f1(4,3,sub) ); // What will it print?</pre>
+            </div>
+            <div class="col-md-10"><pre class="prettyprint pre18">
+console.log(f1(3,3,add())); // What will it print?</pre>
+            </div>
+            <div class="col-md-10"><pre class="prettyprint pre18">
+console.log(f1(3,"hh",add));// What will it print</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+    <article>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Callbacks</h2>
+      <h3>Functions as Parameters</h3>
+    </hgroup>
+    <article>
+     <pre class="prettyprint pre18" style="float:left; width:48%; margin-right: 15px;">
+<b>Synchronous Callback</b>
+var numbers = [1, -4, 9];
+var newSign = numbers.map(<b>function(num)
+{
+   return num * -1;
+}</b>);
+// newSign is now [-1, 4, -9].numbers are still [1, 4, 9]
+       </pre>
+      <pre class="prettyprint pre18" style="float:left; width:45%">
+<b>Asynchronous Callback</b>
+function delay(){
+  setTimeout(function(){
+    console.log("Hi  Class");
+  },2000);
+}
+delay();
+console.log("What come first, me or ..");
+        </pre>
+      <div style="margin-top: 10px;">Think of this pattern as a kind of Observer pattern</div>
+      <div>In the examples above the callback is called each time something of interest happens:</div>
+      <ul>
+        <li>For each element in the array in the first example (Synchronous)</li>
+        <li>When the timer has timed out, in the second example (Asynchronous)</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Callbacks</h2>
+      <h3>JavaScript Array Callbacks you NEED to learn</h3>
+    </hgroup>
+    <article>
+      <div class="build">
+     <pre class="prettyprint pre18" style="margin-top: -20px;">
+var names = ["kurt","ole","hans","ib"];
+
+//<b style="color:darkBlue;" >forEach()</b>Executes a provided function once per array element.
+names.forEach(function(name){
+    console.log(name);
+})
+//What does this print?
+</pre>
+      </div>
+      <div class="build">
+      <pre class="prettyprint pre18">
+//<b>filter()</b> Creates a new array with all elements
+//that pass the test implemented by the provided function.
+var newArray = names.filter(function(name){
+    return name.length <= 3;
+})
+//What is the value of <b>newArray</b></pre>
+      </div>
+      <div class="build"><pre class="prettyprint pre18">
+//<b>map()</b> Creates a new array with the results of calling a
+//provided function on every element in this array.
+var mapArray = names.map(function(name){
+  return name.toUpperCase();
+});
+//what is the value of <b>mapArray</b></pre>
+      </div>
+
+    </article>
+  </slide>
+
+
+  <slide>
+    <script>
+      $(document).ready(function () {
+        $("#ex1").exPresenter({
+          directory: "examples/hoisting/",
+          codeClass: "prettyprint pre18",
+          codeStyle: "float:left;margin-right:5px;margin-bottom:5px;width:70%",
+          presenterStyle: "float:right;height:200px;width:20%",
+          commentStyle: "position:absolute;left:60px; top:570px;"
+        });
+      });
+    </script>
+    <hgroup>
+      <h2>Variable Hoisting</h2>
+    </hgroup>
+    <article>
+      <div style="margin-top:-35px;">JavaScript does not support block scoping.</div>
+      <div>Variable definitions are not scoped to their nearest enclosing statement or block,
+        as in Java, but rather to their <em>containing function.</em>
+      </div>
+      <div id="ex1" style="margin-top: 25px;"></div>
+    </article>
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2>Closures</h2>
+    </hgroup>
+    <article>
+      <div style="margin-top: 0px; font-size: 22px;">A closure is a special kind of object that combines two things:
+        <ul>
+          <li>A function</li>
+          <li>The environment in which that function was created.
+            The environment consists of any local variables that were in-scope at the time that the closure was
+            created
+          </li>
+          <li>With closure we can create real (and its the only way) private variables in JavaScript
+          </li>
+        </ul>
+      </div>
+      <footer class="source">source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures</footer>
+    </article>
+  </slide>
+  <slide>
+    <script>
+      $(document).ready(function () {
+        $("#closure2").exPresenter({
+          directory: "examples/Closures2/",
+          codeClass: "prettyprint pre16",
+          codeStyle: "float:left;margin-right:5px;margin-bottom:5px;width:70%",
+          presenterStyle: "float:right;height:200px;width:20%",
+          commentStyle: "position:absolute;left:60px; top:500px;width:1000px;font-size:22px;"
+        });
+      });
+    </script>
+    <hgroup>
+      <h2>Closures - The Module Pattern</h2>
+
+      <h3>Emulating private methods with closures</h3>
+    </hgroup>
+    <article>
+      <div style="margin-top: -50px;margin-bottom:10px;font-size: 21px;">
+        JavaScript does not, like Java, provide a native way of providing private methods.<br/>
+        But it is possible to emulate this using closures.
+      </div>
+      <div id="closure2"></div>
+      <footer class="source">source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures</footer>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>JavaScript Objects</h2>
+
+      <h3>Working with Objects</h3>
+    </hgroup>
+
+    <article>
+
+      <p style="color: #000066;margin-top:-30px;">
+        Create an object named myCar and give it properties named make, model, </p>
+
+
+      <pre class="prettyprint">
+var myCar = new Object();
+<b>myCar = {} //Alternative notation (preferred)</b>
+myCar.make = "Ford";
+myCar.model = "Mustang";
+myCar.year = 1969;    </pre>
+      <p style="color: #000066;">Properties of JavaScript objects can also be accessed or set using a bracket notation.
+        Objects are sometimes called associative arrays,
+        since each property is associated with a string value that can be used to access it</p>
+      <pre class="prettyprint">
+myCar["make"] = "Ford";
+myCar["model"] = "Mustang";
+myCar["year"] = 1969;
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Creating new objects</h2>
+
+      <h3</h3>
+    </hgroup>
+
+    <article>
+
+      <p style="color: #000066;margin-top:-30px;">
+        We can create new objects in more than one way:
+      </p>
+
+      <p>Using an Object Initializer</p>
+      <pre class="prettyprint">
+var myHonda = {color: "red", wheels: 4, engine: {cylinders: 4, size: 2.2}}; </pre>
+      <p>Using a constructor function</p>
+      <pre class="prettyprint">
+//The Constructor function
+function Car(make, model, year) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+}
+//Creating instances
+var car1 = new Car("Volvo", "V70", 2005);
+var car1 = new Car("Volvo", "244", 1988);</pre>
+      <footer class="source">source:
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
+      </footer>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Constructor Functions</h2>
+    </hgroup>
+    <article>
+      <p>When a function is invokeded via the <em>new</em> operator, it becomes a Constructor function </p>
+
+      <p>By convention Constructor Functions <b style="font-size: 1.3em">always</b> start with a capital letter</p>
+
+      <p>Notice the use of <em>this</em> to assign values to the object's properties based on the values passed to the
+        function.</p>
+
+      <p>Constructor Functions are often a confusing concept for Java developers, because they desperately looks for the
+        matching <em>class</em></p>
+
+      <p>Remember, there are no classes in JavaScript (pre- ECMAScript 2015).</p>
+      <br/>
+      <p><b style="border:solid thick darkgoldenrod;padding:0.4em;">A constructor function is just a function being
+        invoked with <em>new</em></b></p>
+
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Defining methods - 1</h2>
+
+      <h3>Adding methods to our objects (via this)</h3>
+    </hgroup>
+
+    <article>
+
+
+<pre class="prettyprint pre16" style="margin-top: -30px;">
+<b>function showCar()</b>{
+  console.log("A Beautiful " + this.year + " " + this.make + " " + this.model);
+}
+
+function Car(make, model, year) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+  <b>this.show = showCar;</b>
+}
+//Creating instances
+var car1 = new Car("Volvo", "V70", 2005);
+car1.show();</pre>
+
+      <p style="margin-top: 20px;">This is not very efficient. Each time we create a new Car instance, a new showCar
+        instance is created in memory</p>
+
+      <p>The better option is to add the method to the prototype of Car</p>
+      <footer class="source">source:
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
+      </footer>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Defining methods</h2>
+
+      <h3>The right way, with the prototype</h3>
+    </hgroup>
+
+    <article>
+
+
+<pre class="prettyprint pre16" style="margin-top: -30px;">
+function Car(make, model, year) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+  <b style="text-decoration: line-through">this.show = showCar;</b>
+}
+<b>Car.prototype.showCar = function()</b>{
+  console.log("A Beautiful " + this.year + " " + this.make + " " + this.model);
+}
+//Creating instances
+var car1 = new Car("Volvo", "V70", 2005);
+car1.showCar();</pre>
+
+      <p style="margin-top: 10px;">Each Constructor Function has a <em>prototype</em> property that refers to an object.
+        That object
+        becomes the <em>prototype</em> of all instances created with the Constructor Function</p>
+
+      <p>We can attach new functions and properties to this object, which will be shared by all (Car) instances</p>
+
+
+      <footer class="source">source:
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
+      </footer>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup><h2>JavaScript and <em>this</em></h2>
+
+      <h3>JavaScript <em>this</em> for Java Programmers</h3>
+    </hgroup>
+    <article>
+      <p style="margin-top: -25px; color: #000088;border: solid thin lightblue;border-radius: 5px;padding: 10px;background-color: lightblue">
+        JavaScript always makes me want to flip the table and say “F... this
+        shit”. But I can never be sure what <b style="font-size: 1.3em;">this</b> refers to ;-)
+        <span style="font-size: x-small">source:
+        <a href="https://twitter.com/oscherler/status/660049264903643136">Ölbaum</a>
+      </span>
+      </p>
+      <ul>
+        <li>Whenever a function is contained in the global scope, the value of <em>this</em> inside of that function
+          will be the global object (window in a browser)
+          or <em>undefined</em> if in <em>strict mode</em></li>
+        <li>Whenever a function is called by a preceding dot, the object before that dot is <em>this</em>.</li>
+        <li>Whenever a constructor function is used, <em>this</em> refers to the specific instance of the object that is
+          created and returned by the constructor function.
+        </li>
+        <li>Whenever JavaScript’s <code>call</code> or <code>apply</code> method is used, this is explicitly defined.
+        </li>
+      </ul>
+    </article>
+  </slide>
+  <slide>
+    <hgroup>
+      <h2>JavaScript <em>this</em> Pitfalls</h2>
+    </hgroup>
+    <article>
+      <pre class="prettyprint pre14" style="margin-top: -30px;" data-lang="Forgetting new">
+function Car(make,model) {
+  this.make = make;
+  this.model = model;
+}
+var car = Car("Volvo","V70"); //Forgot new
+console.log(car===undefined); //true
+console.log(make); //Volvo, global Scope has been poluted
+      </pre>
+      <pre class="prettyprint pre14" style="margin-top: 10px;" data-lang=" Losing 'this' When Extracting a Method">
+var counter = {
+    count: 0,
+    inc: function () {
+        this.count++;
+    }
+}
+> var func = counter.inc; //Store "reference" to inc
+> func();
+> counter.count  // 0, does not work
+      </pre>
+      <pre class="prettyprint pre14" style="margin-top: 10px;" data-lang="Shadowing this">
+function Car(make,model) {
+  this.make = make;
+  this.model = model;
+  this.show = function(){setTimeout(function(){ //This function gets it's own "this"
+    console.log(this.make + ", " + this.model);
+  },0)};
+}
+var car = new Car("Volvo","V70");
+car.show(); //undefined, undefined
+</pre>
+    </article>
+  </slide>
+
+
+  <slide class="nobackground" style="background: #00163B">
+    <aside class="gdbar right"><img src="../images/logo.png" style="width: 200px;"></aside>
+    <hgroup>
+
+    </hgroup>
+    <article class="flexbox  auto-fadein" style="margin-top: 25%;">
+      <h2>Rest of today; Exercises :-)</h2>
+
+    </article>
+    <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+    </p>
+  </slide>
+
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<!--[if IE]>
+<script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+<script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>

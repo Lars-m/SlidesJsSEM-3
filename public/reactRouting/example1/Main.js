@@ -4,123 +4,72 @@
 var ReactRouter = window.ReactRouter;
 var React = window.React;
 var ReactDOM = window.ReactDOM;
-var { Router, Route, IndexRoute, IndexLink, hashHistory, Link} = ReactRouter;
+var ReactRouterDOM = window.ReactRouterDOM;
+var { BrowserRouter, HashRouter, Route, Link, NavLink} = ReactRouterDOM;
 
-//Outer View start
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <ul className="header">
-          <li><IndexLink activeClassName="active" to="/">Home</IndexLink></li>
-          <li><Link activeClassName="active" to="/products">Products</Link></li>
-          <li><Link activeClassName="active" to="/company">Company</Link></li>
-          <li><Link activeClassName="active" to="/blog">Blog</Link></li>
-        </ul>
-        <div className="content">
-          {this.props.children}
-        </div>
-      </div>
-    );
-  }
-}
-//Outer View end
-
-//Views start
-const Home = () => (
+let Home = () => (
   <div>
-    <h2>Home View</h2>
-    <p>Info about this site</p>
+    <h2>Home</h2>
   </div>
 )
 
-const Company = () => {
-  return (
-    <div>
-      <h2>About Us</h2>
-      <p>Our about page</p>
-    </div>
-  )
-}
-const Blog = () => <h2>Our Company Blog</h2>
-
-const Product = (props) => (
+let About = () => (
   <div>
-    <h2>Our Products</h2>
-    <h4>All our great books </h4>
+    <h2>About</h2>
+  </div>
+)
+
+let Topic = ({ match }) => (
+  <div className="topic">
+    <h3>{match.params.topicId}</h3>
+  </div>
+)
+
+let Topics = ({ match }) => (
+  <div>
+    <h2>Topics</h2>
     <ul>
-      {props.route.books.map((book) => <li key={book.id}>
-        {book.title} <Link to={`products/details/${book.id}`}>(details)</Link></li>)}
+      <li>
+        <NavLink activeClassName="activeV2" to={`${match.url}/rendering`}>
+          Rendering with React
+        </NavLink>
+      </li>
+      <li>
+        <NavLink activeClassName="activeV2" to={`${match.url}/components`}>
+          Components
+        </NavLink>
+      </li>
+      <li>
+        <NavLink activeClassName="activeV2" to={`${match.url}/props-v-state`}>
+          Props v. State
+        </NavLink>
+      </li>
     </ul>
+
+    <Route path={`${match.url}/:topicId`} component={Topic}/>
+    <Route exact path={match.url} render={() => (
+      <h3>Please select a topic.</h3>
+    )}/>
   </div>
 )
-//Views end
 
-class Details extends React.Component {
-  render() {
-    let id = this.props.params.id;
-    let book = this.props.route.books.filter((book) => {
-      return book.id === Number(id);
-    })[0];
-    return (
-      <div>
-        <h3 style={{color: "steelblue"}}>Detailed info for the title: {book.title}</h3>
-        <h4> {book.info}</h4>
-        <h4>{book.moreInfo}</h4>
-        <br />
-        <Link to="/products">Products</Link>
-      </div>
-    );
-  }
-}
-//DataStore for this Demo
-class BookStore {
-
-  constructor() {
-    this._books = [
-      { id: 1,title: "How to Learn JavaScript - Vol 1", info: "Study hard",moreInfo: "" },
-      { id: 2,title: "How to Learn ES6", info: "Complete all exercises :-)",moreInfo: "" },
-      { id: 3,title: "How to Learn React",info: "Complete all your CA's",moreInfo: ""},
-      { id: 4,title: "Learn JavaScript, React and MobX",info: "Don't drink beers, until Friday (after four)",
-                      moreInfo: "5 Points = 5 beers ;-)"
-      }
-    ]
-  }
-  get books(){
-    return this._books;
-  }
-}
-//Router start
-class RouterComponent extends React.Component {
-  constructor() {
-    super();
-  }
-
-  render() {
-    var books = this.props.bookStore.books;
-    return (
-      <div>
-        <Router history={hashHistory}>
-          <Route path="/" component={App}>
-            <IndexRoute component={Home}></IndexRoute>
-            <Route path="products" component={Product}
-                   books={books}/>
-            <Route path="products/details/:id" component={Details}
-                   books={books}/>
-            <Route path="company" component={Company}/>
-            <Route path="blog" component={Blog}/>
-          </Route>
-        </Router>
-      </div>
-    );
-  }
-}
-//Router end
-
-let bookStore = new BookStore();
-
+let BasicExample = () =>(
+  <HashRouter>
+    <div>
+      <ul className="header">
+        <li><NavLink exact to="/">Home</NavLink></li>
+        <li><NavLink to="/about">About</NavLink></li>
+        <li><NavLink to="/topics">Topics</NavLink></li>
+      </ul>
+      <hr/>
+      <Route exact path="/" component={Home}/>
+      <Route path="/about" component={About}/>
+      <Route path="/topics" component={Topics}/>
+    </div>
+  </HashRouter>
+)
 ReactDOM.render(
-  <RouterComponent bookStore={bookStore}  />, document.querySelector("#root")
+  <BasicExample  />, document.querySelector("#root")
 );
 
 

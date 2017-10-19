@@ -3,7 +3,7 @@ var SLIDE_CONFIG = {
   settings: {
     title: 'Routing',
     subtitle: 'Routing with React Router',
-    date: 'Spring - 2017',
+    date: 'Fall - 2017',
     useBuilds: true, // Default: true. False will turn off slide animation builds.
     usePrettify: true, // Default: true
     enableSlideAreas: true, // Default: true. False turns off the click areas on either slide of the slides.
@@ -19,7 +19,7 @@ var SLIDE_CONFIG = {
 
   // Author information
   presenters: [{
-    name: 'Lars Mortensen',
+    name: 'Semester 3',
     company: '',
     gplus: '',
     twitter: '',
