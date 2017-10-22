@@ -330,9 +330,9 @@
       <h2>React-Router - Important <em>bits an pieces</em></h2>
     </hgroup>
     <article>
-      <div style="margin-top: -20px;">
-        <p>This is for you to do by yourself. Use the two figures from the previous slides and the links below
-          to get the details related to the "bits and pieces" </p>
+      <div style="margin-top: -35px;">
+        <p style="font-size: 0.9em;font-style: italic;color: darkgreen;">This is for you to do by yourself. Use the figures from the previous slides and the links below
+          for details related to the "bits and pieces" </p>
         <div class="row">
           <div class="col-md-2" style="font-size: 0.9em;">
             <a href="https://reacttraining.com/react-router/web/api/Link">Link</a>
@@ -354,7 +354,7 @@
             <a href="https://reacttraining.com/react-router/web/api/HashRouter">HashRouter</a>
           </div>
           <div class="col-md-10" style="font-size: 0.9em;font-style: italic">
-            Use the <code>&lt;HashRouter/&gt;</code> if your project is hosted on on a server that only serves static files
+            Use the <code>&lt;HashRouter/&gt;</code> if your project is hosted on a server that only serves static files
             (This is what we recommend (for green and yellow students), but make sure to read to documentation
           </div>
         </div>
@@ -384,6 +384,16 @@
             Renders the first child <code>&lt;Route&gt;</code> or <code>&lt;Redirect&lt;</code> that <em>matches the location </em><br/>
             Always use this around your &lt;Route&gt;s or read the documentation and understand what it means to render <em>exclusively</em>
              versus render <em>inclusively</em>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 12px;">
+          <div class="col-md-2" style="font-size: 0.8em;">
+            <a href="https://reacttraining.com/react-router/web/api/match">match object</a>
+          </div>
+          <div class="col-md-10" style="font-size: 0.8em;font-style: italic">
+            A <b>match object</b> contains information about how a <code>&lt;Route path&gt;</code> matched the URL.
+            <b>match objects</b> are used to access URL-parameters, and are usefull for building nested &lt;Route&gt;s.
+            &nbsp;Check the documentation see to how you will get access to a <em>match</em> object
           </div>
         </div>
 
