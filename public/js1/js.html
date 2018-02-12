@@ -55,14 +55,14 @@
     </hgroup>
 
     <article>
-      <div style="margin-top: 0px;">The next two days we will add to your JavaScripts skills (remember 2. semester
-        ;-)
+      <div style="margin-top: 0px;">The next two days we will introduce JavaScript and the Document Object Model
       </div>
+      <div>This will form the basics for all the (client side) web development we will do this semester</div>
       <br/>
       <p>Today:</p>
       <div>
         <ul>
-          <li>Short summary from 2. semester, what is JavaScript (<code>var</code> and forgetting <code>var</code>,
+          <li>What is JavaScript, and how does it differ from Java (<code>var</code> and forgetting <code>var</code>,
             == and ===, lack of type check, <code>null</code> and <code>undefined</code> etc.)
           </li>
           <li>Functions and Callbacks and asynchronous Callbacks</li>
@@ -91,12 +91,12 @@
         <li>JavaScript is THE Scripting Language of the WEB</li>
         <li>
           <div class="row">
-            <div class="col-md-7">
+            <div class="col-md-8">
               But today JavaScript is used <b>everywhere</b></br>
               We will however only focus on <em>browsers</em> this semester
             </div>
-            <div class="col-md-5">
-              <img style="width: 60%;" src="images/jseverywhere.PNG">
+            <div class="col-md-4">
+              <img style="width: 90%;" src="images/jseverywhere.PNG">
             </div>
           </div>
         </li>
@@ -229,7 +229,7 @@ if (typeof myVar === 'undefined'){
       <div style="margin-top: 10px;">
         <div class="row">
           <div class="col-md-6">
-            ">In Java we can pass objects as parameters
+            "In Java we can pass objects as parameters
           </div>
           <div class="col-md-6">In JavaScript we can pass functions as parameters</div>
         </div>
@@ -296,8 +296,8 @@ var sub = function(n1,n2){
         <div class="row">
           <div class="col-md-2">Callback example</div>
           <div class="col-md-10"><pre class="prettyprint pre18">
-var cb = function(n1,n2, callback){
-  return "Result from the two numbers: "+n1+"+"+n2+"="+callback(n1,n2);
+var f1 = function(n1,n2, callback){
+  return "Result using the numbers: "+n1+" and "+n2+" = "+callback(n1,n2);
 }; </pre>
           </div>
         </div>
