@@ -224,12 +224,14 @@ ReactDOM.render(
       <h2>Props</h2>
     </hgroup>
     <article>
-      <div class="row">
-        <div class="col-md-6">
+      <div class="row" style="margin-top:-25px;">
+        <div class="col-md-5">
           <pre>
 //Component using <b>props</b>
 function Welcome(<b>props</b>) {
-  return &lt;h1&gt;Hello, <b>{props.name}</b>&lt;/h1&gt;;
+  return &lt;h1&gt; Hello, 
+      <b>{props.name}</b>
+  &lt;/h1&gt;;
 }
 
 //Passing values to props
@@ -244,7 +246,7 @@ function App() {
 }
           </pre>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-7">
           <p><b>Props:</b> </br>
             Remember, conceptually, components are like JavaScript functions.
             They accept arbitrary inputs called <b style="color:darkblue">"props"</b> and return React elements
@@ -252,7 +254,8 @@ function App() {
           <p><b>Props are Read-Only:</b> </br>
             Whether a component is declared as a function or a class, it must <em>never modify its own props</em>
           </p>
-          <p></p>
+          <p><b>Props are always passed in from parent:</b></p>
+          <img src="images/props.png" style="width:50%"/>
         </div>
       </div>
     </article>
@@ -316,10 +319,10 @@ function App() {
     <article>
       <div style="font-size: 0.9em;margin-top: -30px;">
         <p>
-          There are two types of data that control a component: props and state. <b>props</b> are set by the parent
+          There are two types of data that control a component: props and state. <b>props</b> are <em>always</em> set by the parent
           and they are <em>fixed throughout the lifetime</em> of a component.</p>
         <p>
-          For data that is going to change, we have to use <b>state</b>
+          For data that is going to change, we have to use <b>state</b>.
           In general, you should initialize state in the constructor, and then call setState when you want to change it.
         </p>
       </div>
@@ -561,7 +564,7 @@ function App() {
     </article>
   </slide>
 
-  <script>
+  <!-- <script>
     $(document).ready(function () {
       $("#tictactoe").exPresenter({
         directory: "examples/tictactoe/",
@@ -571,7 +574,7 @@ function App() {
         commentStyle: "float:right;width:28%;font-size:20px;"
       });
     });
-  </script>
+  </script> -->
 
   <slide>
     <hgroup>
@@ -579,6 +582,82 @@ function App() {
     </hgroup>
     <article>
       <p>TBD</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Lifting State UP</h2>
+    </hgroup>
+    <article>
+      <div style="margin-top:-15px;" class="build">
+        <div class="row">
+          <div class="col-md-6">
+            <br/><br/>
+              Recomended unidirectional dataflow in React
+          </div>
+          <div class="col-md-6">
+             <img src="images/dataFlowInReact.png" style="width: 90%">
+          </div>
+          
+        </div>
+        
+        <div class="row">
+            <hr/>
+            <div class="col-md-7">
+              <p>
+              Often, several components need to reflect the same changing data.<br/>
+                Facebook recommends lifting the shared state up to their closest common ancestor.</p>
+            
+              <p>There should be a single “source of truth” for any data that changes in a React application.</p> 
+              
+            </div>
+            <div class="col-md-5">
+               <img src="images/liftStateUp.png" style="width: 80%;margin-left:50px;">
+            </div>
+          </div>
+        
+        
+      </div>
+    </article>
+  </slide>
+  <slide>
+    <hgroup>
+      <h2>Lifting State UP</h2>
+      <h3>Use this example (continues on next slide) as a template for this problem</h3>
+    </hgroup>
+    <article>
+      <div style="margin-top:-35px;">
+        <img style="width:80%;margin-left:50px;" src="images/liftingState.PNG"/>
+        <p style="font-style: italic;font-size: 0.9em;color:steelblue;margin-top:25px;">
+          We suggest, to solve a problem that React doesn't solve, the use of Data Stores (or factories when a backend is involved) 
+          as in this example.<br/>Feel free to go with a single Store/factory (Single Source of Truth) or many.</p>
+      </div>
+    </article>
+  </slide>
+
+  <script>
+    $(document).ready(function () {
+      $("#lifting_state").exPresenter({
+        directory: "examples/lifting_state/",
+        codeClass: "prettyprint pre16",
+        codeStyle: "float:left;margin-right:5px;margin-bottom:5px;width:67%;min-height: 300px;background-color:white;",
+        presenterStyle: "float:right;width:30%;height: 500px;margin-bottom:15px;",
+        commentStyle: "float:right;width:30%;font-size:20px;",
+        imageStyle: "width: 100%;margin-top:40px;margin-left:-5px;",
+        imageTitle: "Architecture"
+      });
+    });
+  </script>
+
+  <slide>
+    <hgroup>
+      <h2>Lifting State UP</h2>
+    </hgroup>
+    <article>
+      <div style="margin-top:-25px;">
+        <div id="lifting_state"></div>
+      </div>
     </article>
   </slide>
 <!--

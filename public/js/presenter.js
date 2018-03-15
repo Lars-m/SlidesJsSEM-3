@@ -15,7 +15,7 @@ function getNamePlain(str) {
 function isImage(str) {
   var index = str.lastIndexOf(".") + 1;
   var type = str.substr(index);
-  return (type==="png" || type==="jpg" || type==="svg");
+  return (type==="PNG" || type==="png" || type==="jpg" || type==="svg");
 }
 
 var entityMap = {
@@ -193,10 +193,6 @@ function makeHandler(path, fileName, content, iframe, btnDiv, comment, first, sh
           file= fileInfo;
         }
         title = title!= null ? title : file;
-//                if (getType(file) === "md") {
-//                    return;
-//                }
-        //Hardcoded to allow for only one image
 
         if(isImage(file)){
           title = settings.imageTitle ? settings.imageTitle : file;
