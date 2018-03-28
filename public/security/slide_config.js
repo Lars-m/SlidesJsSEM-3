@@ -1,9 +1,9 @@
 var SLIDE_CONFIG = {
   // Slide settings
   settings: {
-    title: 'Security-2',
+    title: 'Security',
     subtitle: 'Authentication in SinglePage/App-Applications and handling passwords',
-    date: 'Spring - 2017',
+    date: 'Spring - 2018',
     //eventInfo: {
     //  title: 'Google I/O',
     //  date: '6/x/2013'

@@ -59,7 +59,7 @@
 
   <slide>
     <hgroup>
-      <h2 style="font-size: 1.65em;">Will the Seed provide totally secure API's?</h2>
+      <h2 style="font-size: 1.4em;">Will what we learn todat totally secure our API's?</h2>
     </hgroup>
 
     <article>
@@ -104,7 +104,7 @@
 
   <slide>
     <hgroup>
-      <h2>The goal (requirements) for the seed?</h2>
+      <h2 style="font-size: 1.5em;">The security requirements for today and CA3?</h2>
     </hgroup>
 
     <article>
@@ -121,7 +121,7 @@
         <li>Parts of the API might need to be accessed by other servers</li>
       </ul>
       <img src="images/disclaimer.PNG" style="width:25%;">
-      <p>I have not had enough time, and external reviewers to provide a "production" guarantee for the seed</p>
+      <p>I have not had enough time, and external reviewers to provide a "production" guarantee for the exercises given today</p>
       <p>It's meant for examples in the classroom</p>
     </article>
   </slide>
@@ -343,7 +343,7 @@ HMACSHA256(
     </hgroup>
 
     <article>
-      <img style="margin-top: -35px;margin-left:5%;width:72%;" src="images/jsonwebtoken.png">
+      <img style="margin-top: -35px;margin-left:5%;width:80%;" src="images/jsonwebtoken.png">
 
       <p style="font-size: 0.8em;"><a href="http://scytl.github.io/restguide/#_security">
         http://scytl.github.io/restguide/#_security</a></p>
@@ -356,8 +356,11 @@ HMACSHA256(
       <h3></h3>
     </hgroup>
     <article>
-     <p>For this semester, just use the seed as it is</p>
-
+     <ul>
+     <li>Web Storage (local storage/session storage)</li>
+     <li>Cookies</li>
+     </ul>
+     <p>Read here for more <a href="https://auth0.com/docs/security/store-tokens">info</a></p>
     </article>
   </slide>
 
@@ -530,14 +533,14 @@ HMACSHA256(
 
   <slide>
     <hgroup>
-      <h2>Hashing Passwords with the seed</h2>
+      <h2>Hashing Passwords today and in CA3</h2>
       <h3></h3>
     </hgroup>
-    <article style="margin-top: 0px;">
-      <p>This is what you have to add to the seed</p>
-      <p>See exercise for today, and use this class to do the "hard work"</p>
-      <a href="https://github.com/defuse/password-hashing/blob/master/PasswordStorage.java">
-        https://github.com/defuse/password-hashing/blob/master/PasswordStorage.java
+    <article>
+      <p>You should use the brypt algorithm</p>
+      <p>There are several java implementations of this algorithm, we suggest <b>jbrypt</b></p>
+      <a href="https://www.mindrot.org/projects/jBCrypt/">
+        https://www.mindrot.org/projects/jBCrypt/
       </a>
 
     </article>
