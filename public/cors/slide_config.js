@@ -3,7 +3,7 @@ var SLIDE_CONFIG = {
   settings: {
     title: 'SOP and CORS',
     subtitle: 'Single Origin Policy and CORS',
-    date: 'Spring - 2017',
+    date: 'Fall - 2018',
     useBuilds: true, // Default: true. False will turn off slide animation builds.
     usePrettify: true, // Default: true
     enableSlideAreas: true, // Default: true. False turns off the click areas on either slide of the slides.

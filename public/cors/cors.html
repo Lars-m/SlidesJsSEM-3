@@ -86,41 +86,66 @@
 
   <slide>
     <hgroup>
-      <h2>The Same Origin Policy (SOP)</h2>
-      <h3>Solving SOP-Problems</h3>
+      <h2>Ways to Relax the Same Origin Policy</h2>
+    
     </hgroup>
     <article>
       <div>
-        <p>There are several ways to Relax the Same Origin Policy. we will look at the following two strategies:.
-        </p>
+        
+        <h3><b>1)</b> If you are in control of the API-server </h3>
         <ul>
+          <li>The most obvious solution, when/if possible - host your frontend and your API on the same origin</li>
           <li>
-            <p>Fetch data via the <b>Origin</b> server<br/>
-              SOP is a policy implemented <em>only</em> by Browsers.<br/>
-              Nothing similar to SOP, prevents a <em>Server</em> from making a request to another <em>Server</em></br>
-            </p>
-          </li>
-          <li>
-            <p>Cross-origin resource sharing <b>(CORS)</b><br/>
+            <p>Cross Origin Resource Sharing <b>(CORS)</b><br/>
               Defines a way in which a browser and server can interact to safely determine whether or not to allow the
               cross-origin request</p>
           </li>
+        </ul>
+        <hr/>
+        <h3><b>2)</b> If you are <b>NOT</b> in control of the API-server </h3>
+        <ul>
+          <li>
+            <p>Fetch data via an adapter on the <b>Origin</b> server<br/>
+              SOP is a policy implemented <em>only</em> by Browsers.<br/>
+              Nothing, similar to SOP, prevents a <em>Server</em> from making a request to another <em>Server</em></br>
+            </p>
+          </li>
+          
         </ul>
       </div>
     </article>
   </slide>
 
   <slide>
+      <hgroup>
+        <h2>SPA + API hosted on the same Origin</h2>
+        <h3></h3>
+      </hgroup>
+      <article>
+        <div style="margin-top: -25px;font-size: 0.9em">
+          <p >You have already done this with your first JavaScript-apps. Here the REST-API and the Web-pages (HTML, JS, CSS etc.) 
+            both were hosted on Tomcat.<p/>
+          <p style="font-size: 0.9em">This, however, is usually a bad idea, since it prevents/ complicates 
+            separate development of front- and back-end.<p/>
+           <p style="margin-bottom:0px;"> For us, an obvious solution, since we are using <em>Nginx</em> with <em>Tomcat</em>, is an architecture as sketched below.</p>
+          <img style="margin-left: 6em;width:70%" src="images/hostedOnSameOrigin.PNG">
+          <p>Observe that the two URL's above is on the same Origin </p>
+        </div>
+      </article>
+    </slide>
+
+  <slide>
     <hgroup>
-      <h2>The Same Origin Policy (SOP)</h2>
-      <h3>Solved via a Proxy on the Origin Server</h3>
+      <h2>Using an adapter on the Origin server</h2>
+      <h3>If you have no control/influence of the API-server setup</h3> 
     </hgroup>
     <article>
       <div style="margin-top: -25px;">
-        <p>Since SOP is a policy implemented only by Browsers we can make a <em>Proxy</em> on our Origin-Server as
+        <p>Since SOP is a policy implemented <em>only by Browsers</em> we can make a <em>Proxy</em> on our Origin-Server as
           sketched below</p>
         <img style="margin-left: 5em;" src="images/proxy-adapter.PNG">
-        <p>This will often by the most viable solution if you do not have any control over the source-server </p>
+        <br/>
+        <p>This will often by the most viable solution if you do not have <b>any control over the API-server</b> </p>
       </div>
 
     </article>
@@ -128,8 +153,8 @@
 
   <slide>
     <hgroup>
-      <h2>The Same Origin Policy (SOP)</h2>
-      <h3>Solved via the <b>C</b>ross-<b>O</b>rigin <b>R</b>esource <b>S</b>haring (<b>CORS</b>) Mechanism</h3>
+      <h2>Cross-Origin Resource Sharing (CORS)</h2>
+      <h3>SOP, Solved using <b>C</b>ross-<b>O</b>rigin <b>R</b>esource <b>S</b>haring (<b>CORS</b>) Headers</h3>
     </hgroup>
     <article>
       <div class="build">
@@ -148,9 +173,8 @@
         </div>
         <div>
           <p style="font-size: larger;color: #2a6496">Preflight Requests</p>
-          <p>Unlike <em>simple requests</em> <em>preflighted</em> requests first send an HTTP request by the OPTIONS
-            method
-            to the resource on the other domain, in order to determine whether the actual request is safe to send.<br/>
+          <p>Unlike <em>simple requests</em> <em>preflighted</em> requests first send an HTTP request using 
+            the <code>OPTIONS</code> method to the resource on the other domain, in order to determine whether the actual request is safe to send.<br/>
             Cross-site requests are preflighted like this since they may have implications to user data.</p>
         </div>
       </div>
@@ -161,13 +185,10 @@
       <h2>SOP / CORS - Why Should I Care?</h2>
     </hgroup>
     <article>
-      <p>We will, from time this semester, user resources. which DO NOT set the CORS headers, so you must know about the
-        "Proxy Solution"</p>
-      <p>
+      
         In the next Period we will focus on <b>Single Page Applications</b><br/><br/>
-        For this kind of applications it is not uncommon to have your client code (JavaScript/React code) hosted on one
-        server
-        and your Backend code on a different server(s).</br>
+        For this kind of applications it is not uncommon to have your client code (Bundled SPA) hosted on one
+        server and your API on a different server(s).</br>
         <i>This will inevitable lead to SOP-problems, which you should solve with CORS</i>
       </p>
       <p>Read one of these two articles for the full story (the last one, if you wan't it all)</p>
@@ -208,8 +229,8 @@
 
   <slide>
     <hgroup>
-      <h2>REST with JAX-RS </h2>
-      <h3>How to set the CORS headers</h3>
+      <h2>CORS with REST made with JAX-RS </h2>
+      <h3>How to set the CORS headers in your Java backend</h3>
     </hgroup>
     <article style="margin-top: 10px;">
       <p>This <b>Request</b>-filter will handle requests of the type OPTIONS</p>
@@ -270,6 +291,7 @@ public class CorsResponseFilter implements ContainerResponseFilter {
       <p>Use Postman, or better, your existing JavaScript front-ends, to verify that CORS-headers are added to all your requests</p>
     </article>
   </slide>
+  
 
   <slide class="nobackground" style="background: #00163B">
     <aside class="gdbar right"><img src="../images/logo.png" style="width: 200px;"></aside>
@@ -278,7 +300,7 @@ public class CorsResponseFilter implements ContainerResponseFilter {
     </hgroup>
     <article class="flexbox  auto-fadein" style="margin-top: 25%;">
 
-    </article>9999999999
+    </article>
     <p class="auto-fadein" data-config-contact>
       <!-- populated from slide_config.json -->
     </p>
