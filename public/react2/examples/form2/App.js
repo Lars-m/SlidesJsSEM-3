@@ -19,7 +19,7 @@ class PersonForm extends React.Component {
     const prop = target.id;
     var value = target.value;
     var person = this.state.person;
-    person[prop] = value;
+    person[prop] = value; //Make sure you understand this
     this.setState({
       person : person
     });

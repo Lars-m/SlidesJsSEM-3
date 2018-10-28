@@ -4,15 +4,15 @@
 class Blink extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {showText: true};
-
+    this.state = {show : true};
     // Toggle the state every second
     setInterval(() => {
-      this.setState({ showText: !this.state.showText });
+      this.setState({ show : !this.state.show });
   }, 1000);
   }
+
   render() {
-    let display = this.state.showText ? this.props.text : ' '
+    let display = this.state.show ? this.props.text : ' '
     return (
       <h2>{display}</h2>
   );
