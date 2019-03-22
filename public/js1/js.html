@@ -48,18 +48,17 @@
     </hgroup>
   </slide>
 
-
   <slide>
     <hgroup>
       <h2>JavaScript </h2>
-    </hgroup>
+    </hgroup> 
 
     <article>
-      <div style="margin-top: 0px;">The next two days we will introduce JavaScript and the Document Object Model
+      <div style="margin-top: -25px;">The next two days we will introduce JavaScript and the Document Object Model
       </div>
       <div>This will form the basics for all the (client side) web development we will do this semester</div>
       <br/>
-      <p>Today:</p>
+      <p style="color:steelblue">Today:</p>
       <div>
         <ul>
           <li>What is JavaScript, and how does it differ from Java (<code>var</code> and forgetting <code>var</code>,
@@ -72,7 +71,7 @@
           <li>Function Closures and the JavaScript Module Pattern</li>
         </ul>
       </div>
-      <p>Tomorrow:</p>
+      <p style="color:steelblue">Tomorrow:</p>
       <ul>
         <li>JavaScript Event Handling</li>
         <li>The DOM</li>
@@ -102,7 +101,7 @@
         </li>
         <li>JavaScript is a language which (today) evolves very quickly
           <a href="https://www.w3schools.com/js/js_versions.asp">JS Versions</a></li>
-        <li>In this module we will only focus on ES5, but in module-3 we will also introduce ES6+7 features
+        <li>In this module we will only focus on ES5+6, but in flow-3 we will also introduce ES6+7+next features
           and "tricks" to use them in a way so "all" browsers are supported
         </li>
       </ul>
@@ -384,27 +383,25 @@ console.log("What come first, me or ..");
     </hgroup>
     <article>
       <div class="build">
-     <pre class="prettyprint pre18" style="margin-top: -20px;">
+     <pre class="prettyprint pre18" style="margin-top: -29px;">
 var names = ["kurt","ole","hans","ib"];
 
 //<b style="color:darkBlue;" >forEach()</b>Executes a provided function once per array element.
 names.forEach(function(name){
     console.log(name);
-})
-//What does this print?
+}) //What does this print?
 </pre>
       </div>
-      <div class="build">
+      <div style="margin-top: 4px;" class="build">
       <pre class="prettyprint pre18">
 //<b>filter()</b> Creates a new array with all elements
 //that pass the test implemented by the provided function.
 var newArray = names.filter(function(name){
     return name.length <= 3;
-})
-//What is the value of <b>newArray</b></pre>
+}) //What is the value of <b>newArray</b></pre>
       </div>
-      <div class="build"><pre class="prettyprint pre18">
-//<b>map()</b> Creates a new array with the results of calling a
+      <div style="margin-top: 5px;" class="build"><pre class="prettyprint pre18">
+//<b>map()</b> Creates a new array with the results of calling the
 //provided function on every element in this array.
 var mapArray = names.map(function(name){
   return name.toUpperCase();
@@ -483,6 +480,7 @@ var mapArray = names.map(function(name){
         But it is possible to emulate this using closures.
       </div>
       <div id="closure2"></div>
+      
       <footer class="source">source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures</footer>
     </article>
   </slide>
@@ -520,23 +518,16 @@ myCar["year"] = 1969;
   <slide>
     <hgroup>
       <h2>Creating new objects</h2>
-
-      <h3</h3>
+      <h3> We can create new objects in more than one way:</h3>
     </hgroup>
 
     <article>
-
-      <p style="color: #000066;margin-top:-30px;">
-        We can create new objects in more than one way:
-      </p>
-
-      <p>Using an Object Initializer</p>
+      <p style="margin-top: -35px;margin-bottom: 5px;">Using an Object Initializer</p>
       <pre class="prettyprint">
 var myHonda = {color: "red", wheels: 4, engine: {cylinders: 4, size: 2.2}}; </pre>
-      <p>Using a constructor function</p>
+      <p style="margin-bottom: 5px;">Using a constructor function (The OLD ES5 way)</p>
       <pre class="prettyprint">
-//The Constructor function
-function Car(make, model, year) {
+function Car(make, model, year) {   //The Constructor function
   this.make = make;
   this.model = model;
   this.year = year;
@@ -544,106 +535,15 @@ function Car(make, model, year) {
 //Creating instances
 var car1 = new Car("Volvo", "V70", 2005);
 var car1 = new Car("Volvo", "244", 1988);</pre>
-      <footer class="source">source:
-        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
+<p style="margin-bottom: 12px;">Using ES6+next Classes</p>
+<p><em> &rarr; We will introduce this in flow (2) + 3</em></p>
+
+      <footer style="margin-top:10px;"class="source"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects">Source</a>
       </footer>
     </article>
   </slide>
 
-  <slide>
-    <hgroup>
-      <h2>Constructor Functions</h2>
-    </hgroup>
-    <article>
-      <p>When a function is invokeded via the <em>new</em> operator, it becomes a Constructor function </p>
-
-      <p>By convention Constructor Functions <b style="font-size: 1.3em">always</b> start with a capital letter</p>
-
-      <p>Notice the use of <em>this</em> to assign values to the object's properties based on the values passed to the
-        function.</p>
-
-      <p>Constructor Functions are often a confusing concept for Java developers, because they desperately looks for the
-        matching <em>class</em></p>
-
-      <p>Remember, there are no classes in JavaScript (pre- ECMAScript 2015).</p>
-      <br/>
-      <p><b style="border:solid thick darkgoldenrod;padding:0.4em;">A constructor function is just a function being
-        invoked with <em>new</em></b></p>
-
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Defining methods - 1</h2>
-
-      <h3>Adding methods to our objects (via this)</h3>
-    </hgroup>
-
-    <article>
-
-
-<pre class="prettyprint pre16" style="margin-top: -30px;">
-<b>function showCar()</b>{
-  console.log("A Beautiful " + this.year + " " + this.make + " " + this.model);
-}
-
-function Car(make, model, year) {
-  this.make = make;
-  this.model = model;
-  this.year = year;
-  <b>this.show = showCar;</b>
-}
-//Creating instances
-var car1 = new Car("Volvo", "V70", 2005);
-car1.show();</pre>
-
-      <p style="margin-top: 20px;">This is not very efficient. Each time we create a new Car instance, a new showCar
-        instance is created in memory</p>
-
-      <p>The better option is to add the method to the prototype of Car</p>
-      <footer class="source">source:
-        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
-      </footer>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Defining methods</h2>
-
-      <h3>The right way, with the prototype</h3>
-    </hgroup>
-
-    <article>
-
-
-<pre class="prettyprint pre16" style="margin-top: -30px;">
-function Car(make, model, year) {
-  this.make = make;
-  this.model = model;
-  this.year = year;
-  <b style="text-decoration: line-through">this.show = showCar;</b>
-}
-<b>Car.prototype.showCar = function()</b>{
-  console.log("A Beautiful " + this.year + " " + this.make + " " + this.model);
-}
-//Creating instances
-var car1 = new Car("Volvo", "V70", 2005);
-car1.showCar();</pre>
-
-      <p style="margin-top: 10px;">Each Constructor Function has a <em>prototype</em> property that refers to an object.
-        That object
-        becomes the <em>prototype</em> of all instances created with the Constructor Function</p>
-
-      <p>We can attach new functions and properties to this object, which will be shared by all (Car) instances</p>
-
-
-      <footer class="source">source:
-        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
-      </footer>
-    </article>
-  </slide>
+  
 
   <slide>
     <hgroup><h2>JavaScript and <em>this</em></h2>
