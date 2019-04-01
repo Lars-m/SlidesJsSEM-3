@@ -3,7 +3,7 @@ var SLIDE_CONFIG = {
   settings: {
     title: "React",
     subtitle: 'Single Page Applications with React',
-    date: 'Fall - 2018',
+    date: 'Spring - 2019',
     useBuilds: true, // Default: true. False will turn off slide animation builds.
     usePrettify: true, // Default: true
     enableSlideAreas: true, // Default: true. False turns off the click areas on either slide of the slides.

@@ -92,6 +92,9 @@
         <div style="font-size: 0.9em;margin-top: -30px;">
           <p> The tag-syntax used by React is called JSX, and it is a <em>syntax extension</em> to JavaScript.<br />
             It's React's recommended way to describe what the UI should look like. </p>
+          <p>Without JSX (and Babel) you would have to write React like 
+            <a href="https://babeljs.io/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=G4QwTgBAzgLpC8EBEAJApgGwweyQbgChRIQJEAeACwEYA-Ab1jAF9yB6G2giHiIA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Ces2017%2Creact%2Cenv&prettier=false&targets=&version=7.4.2">
+            this</a></p>
           <p>JSX is a kind template language, but comes with the full power of JavaScript.
             JSX produces React "elements", which is what can be rendered by React</p>
           </p>
@@ -365,6 +368,32 @@ function App() {
           <br />
           <p>External libraries like <b>Mobx</b> can simplify state-handling</p>
 
+        </div>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>State 3</h2>
+      </hgroup>
+      <article>
+        <p style="color:#2a6496;margin-top: -20px">More important things to know about <b>state</b> in react</p>
+        <div>
+
+          <p>This semester we will use the following rules</p>
+          <p>If you need <b>State</b> or <b>Life Cycle Methods</b></p>
+          <ul>
+            <li>You must use classes that extends React.Component </li>
+          </ul>
+          <p>If you <b>Don't</b> need <b>State</b> or <b>Life Cycle Methods</b></p>
+          <ul>
+              <li>You functional Components </li>
+          </ul>
+          <p style="font-style: italic;color:steelblue">
+            Note: React 16.8 introduced <code>Hooks</code> a new addition to React that let you use state and other React features without writing a class.
+            <br/></br>
+            We will <b>NOT</b> cover Hooks this semester
+          </p>
         </div>
       </article>
     </slide>
