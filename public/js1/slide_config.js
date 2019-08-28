@@ -3,7 +3,7 @@ var SLIDE_CONFIG = {
   settings: {
     title: 'JavaScript',
     subtitle: 'Understanding JavaScript',
-    date: 'Spring - 2019',
+    date: 'Fall - 2019',
     useBuilds: true, // Default: true. False will turn off slide animation builds.
     usePrettify: true, // Default: true
     enableSlideAreas: true, // Default: true. False turns off the click areas on either slide of the slides.
@@ -19,7 +19,7 @@ var SLIDE_CONFIG = {
 
   // Author information
   presenters: [{
-    name: 'Lars Mortensen',
+    name: 'Datamatiker 3. semester',
     company: '',
     gplus: '',
     twitter: '',
