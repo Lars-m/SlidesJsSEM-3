@@ -1,9 +1,9 @@
 var SLIDE_CONFIG = {
   // Slide settings
   settings: {
-    title: "React 2",
-    subtitle: 'JSX and Props',
-    date: 'fall - 2019',
+    title: "React - State and LifeCycle with Class Components ",
+    subtitle: 'State the old way',
+    date: 'Fall - 2019',
     useBuilds: true, // Default: true. False will turn off slide animation builds.
     usePrettify: true, // Default: true
     enableSlideAreas: true, // Default: true. False turns off the click areas on either slide of the slides.

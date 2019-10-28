@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.13/angular.min.js"></script>-->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" media="all" href="../theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="../theme/css/phone.css">
+
+  <script src="code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="../js/jquery-1.11.1.min.js"></script>
+  <script src="../js/presenter.js"></script>
+
+  <base target="_blank">
+  <style>
+    code {
+      color: darkblue;
+    }
+  </style>
+
+  <!-- This opens all links in a new tab. -->
+  <script data-main="../js/slides" src="../js/require-1.0.8.min.js"></script>
+
+  <!--In order to have more than one slideset in the project-->
+  <script src="slides.js"></script>
+
+</head>
+
+<!--Setup Angular for the full slide-set-->
+<!--<body ng-app="SlideApp" style="opacity: 0">-->
+
+<body style="opacity: 0">
+
+  <slides class="layout-widescreen">
+
+    <slide class="title-slide segue nobackground" style="background: #00163B">
+      <aside class="gdbar"><img src="../images/logo.png" style="width: 200px;"></aside>
+      <hgroup class="auto-fadein" style="color: white;">
+        <div style="float: left;">
+          <h1 data-config-title></h1>
+          <h2 data-config-subtitle></h2>
+          <p data-config-presenter></p>
+        </div>
+        <div style="float:left;margin-left: 5em;"><img src="images/React-JS.png" style="float:left;width: 200px;">
+        </div>
+      </hgroup>
+    </slide>
+
+    
+
+    <slide>
+      <hgroup>
+        <h2>State and Lifecycle With Class Components/h2>
+        <h3>Considered the "old" way today</h3>
+      </hgroup>
+      <article>
+        <div style="font-size: 0.9em;margin-top: -30px;">
+          <p>
+            There are two types of data that control a component: props and state. <b>props</b> are <em>always</em> set
+            by the parent
+            and they are <em>fixed throughout the lifetime</em> of a component.</p>
+          <p>
+            For data that is going to change, we have to use <b>state</b>.
+            In general, you should initialize state in the constructor, and then call setState when you want to change
+            it.
+          </p>
+        </div>
+        <div>
+          <div id="ex1"></div>
+        </div>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>State 2</h2>
+      </hgroup>
+      <article>
+        <p style="color:#2a6496;margin-top: -20px">Important things to know about <b>state</b> in react</p>
+        <div>
+
+          <p>The only place you can set state directly is in the constructor</p>
+          <p>Outside the constructor you must set state via the method: <span style="font-weight: bold"><code>this.setState(..);</code></span>
+          </p>
+          <p style="text-align: center">
+            <code>this.setState({ showText: !this.state.showText });</code></p>
+          <p style="text-align: center;font-size: small">Observe, the method takes an object as argument</p>
+          <p>Calling <code>this.setState(..);</code> will <b>Force a re-render</b> (redraw the Component)</p>
+          <p>The only (non-recommended) alternative way with (plain) React to force a re-render is by calling:
+            <span style="margin-top:3px;font-weight: bold"><code>forceUpdate()</code></span></p>
+          <br />
+          <p>External libraries like <b>Mobx</b> can simplify state-handling</p>
+
+        </div>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>State 3</h2>
+      </hgroup>
+      <article>
+        <p style="color:#2a6496;margin-top: -20px">More important things to know about <b>state</b> in react</p>
+        <div>
+
+          <p>This semester we will use the following rules</p>
+          <p>If you need <b>State</b> or <b>Life Cycle Methods</b></p>
+          <ul>
+            <li>You must use classes that extends React.Component </li>
+          </ul>
+          <p>If you <b>Don't</b> need <b>State</b> or <b>Life Cycle Methods</b></p>
+          <ul>
+              <li>You functional Components </li>
+          </ul>
+          <p style="font-style: italic;color:steelblue">
+            Note: React 16.8 introduced <code>Hooks</code> a new addition to React that let you use state and other React features without writing a class.
+            <br/></br>
+            We will <b>NOT</b> cover Hooks this semester
+          </p>
+        </div>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2><a href="https://facebook.github.io/react/docs/react-component.html">The Component Lifecycle</a></h2>
+      </hgroup>
+      <article>
+        <p>
+          Each component has several "lifecycle methods" that can be overrided to run code at particular times in the
+          process.
+          Methods prefixed with <b>will</b> are called right before something happens, and methods prefixed with
+          <b>did</b>
+          are called right after something happens.
+        </p>
+        <p>
+          Let take a look at the details <a href="https://reactjs.org/docs/react-component.html#the-component-lifecycle">here</a>
+        </p>
+
+
+
+
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2><a href="https://facebook.github.io/react/docs/react-component.html">The Component Lifecycle</a></h2>
+      </hgroup>
+      <article>
+        <div style="height:600px;width:1000px;margin-top:-30px;">
+          <iframe data-src="http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/" style="display:block;width:100%;height:100%;"></iframe>
+        </div>
+
+      </article>
+    </slide>
+
+    <script>
+      $(document).ready(function () {
+        $("#table").exPresenter({
+          directory: "examples/listkey1/",
+          codeClass: "prettyprint pre16",
+          codeStyle: "float:left;margin-right:5px;margin-bottom:5px;width:60%;min-height: 300px;background-color:white;",
+          presenterStyle: "float:right;width:35%;height: 165px;margin-bottom:10px;margin-top:-10px;",
+          commentStyle: "float:right;width:35%;font-size:20px;"
+        });
+      });
+    </script>
+
+   
+
+
+    <slide class="backdrop"></slide>
+
+  </slides>
+
+  <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+  <!--[if IE]>
+<script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+<script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+
+</html>

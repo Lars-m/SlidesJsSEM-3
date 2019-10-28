@@ -1,0 +1,21 @@
+{
+  "name": "StateDemo",
+  "files": [
+  {"fileName":"App.js","title":"Component with props validation",
+    "include": {"start": "//start","end": "//end"}
+  },
+  {"fileName":"App.js","title":"Passing Props",
+    "include": {"start": "//start app","end": "//end app"}
+  }
+
+],
+  "filesOnlyForPlunkr": [
+  "index.html",
+  "App.js"
+],
+  "showThisAlways": "index.html",
+  "usePlunk": "true",
+  "tags": ["React", "props", "validation"],
+  "description": "React - props"
+
+}

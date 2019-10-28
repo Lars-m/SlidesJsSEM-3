@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://unpkg.com/react@15.3.1/dist/react.min.js"></script>
+  <script src="https://unpkg.com/react-dom@15.3.1/dist/react-dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.1/babel.min.js"></script>
+  <style>
+    body  {font-family: sans-serif;}
+    h2 {padding: 0px;margin: 2px;}
+    button {margin-top: 3px;}
+    span {font-weight: bold;color:steelblue}
+    .head {margin: 0px;margin-bottom: 3px; color:slategray;font-weight: bold;}
+    .container { 
+    width: 260px;
+    margin:2px;
+    padding:8px;
+    background-color: lightgray;
+    border: solid steelblue 1pt;
+    border-radius: 5px;
+  }
+  
+  .col1 {
+    /* float: left; */
+    border: solid lightgray 2pt;
+    background-color: red;
+    border-radius: 5px;
+    /* width: 45%; */
+    padding: 10px;
+    /* margin-right:10px; */
+  }
+  .col2 {
+    /* float: left; */
+    border: solid lightgray 2pt;
+    background-color: yellow;
+    border-radius: 5px;
+    /* width: 45%; */
+    padding: 10px;
+    margin-right:10px;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  </style>
+</head>
+
+<body>
+<p>Lifting State Demo</p>
+<div id="root" ></div>
+<script type="text/babel" src="App.js"></script>
+</body>
+
+</html>

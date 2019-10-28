@@ -1,0 +1,21 @@
+{
+  "name": "StateDemo",
+  "files": [
+    {"fileName":"App.js","title":"Blink.js",
+      "include": {"start": "//Blink Start","end": "//Blink End"}
+    },
+    {"fileName":"App.js","title":"Rendering Blink",
+      "include": {"start": "//Render Start","end": "//Render End"}
+    }
+
+  ],
+  "filesOnlyForPlunkr": [
+    "index.html",
+    "App.js"
+  ],
+  "showThisAlways": "index.html",
+  "usePlunk": "true",
+  "tags": ["React", "state"],
+  "description": "React - state - props"
+
+}

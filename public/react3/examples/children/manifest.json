@@ -1,0 +1,15 @@
+{
+  "name": "Children",
+  "files": [
+    {"fileName":"App.js","title":"this.props.children"}
+  ],
+  "filesOnlyForPlunkr": [
+    "index.html",
+    "App.js"
+  ],
+  "showThisAlways": "index.html",
+  "usePlunk": "true",
+  "tags": ["React"],
+  "description": "React"
+
+}
