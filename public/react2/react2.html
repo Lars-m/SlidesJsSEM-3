@@ -123,6 +123,36 @@
         </div>
       </article>
     </slide>
+    <slide>
+      <hgroup>
+        <h2><a href="https://facebook.github.io/react/docs/introducing-jsx.html">JSX vs something you know</a></h2>
+      </hgroup>
+      <article>
+        <div>
+          <p>What is this? How is it similar to JSX, and how is it NOT similar to JSX?</p>
+            <pre class="prettyPrint pre18">
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;First JSP&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  &lt;%
+    double num = Math.random();
+    if (num &gt; 0.95) {
+  %&gt;
+      &lt;h2&gt;You'll have a luck day!&lt;/h2&gt;&lt;p&gt;(&lt;%= num %&gt;)&lt;/p&gt;
+  &lt;%
+    } else {
+  %&gt;
+      &lt;h2&gt;Well, life goes on ... &lt;/h2&gt;&lt;p&gt;(&lt;%= num %&gt;)&lt;/p&gt;
+  &lt;%
+    }
+  %&gt;
+  &lt;a href=&quot;&lt;%= request.getRequestURI() %&gt;&quot;&gt;&lt;h3&gt;Try Again&lt;/h3&gt;&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+        </div>
+      </article>
+    </slide>
 
 
     <slide>
