@@ -116,17 +116,58 @@
       <p style="color: #2a6496;font-size: 1.3em;">
         With a SPA, "all" Route Handling are taken care of Client-side
       <p/>
-      <p style="color: darkgrey;font-style: italic;">( Note: Server side Rendering seems to become more and more
-        important for
-        SPA's,
-        but will not be covered this semester )
+      <p style="color: darkgrey;font-style: italic;">( Note: Server side Rendering becomes more and more
+        important for SPA's, in combination with client side rendering, but will not be covered this semester )
       </p>
 
     </article>
   </slide>
   <slide>
     <hgroup>
-      <h2>React Router V4</h2>
+      <h2>Client-side Routing and React</h2>
+    </hgroup>
+    <article>
+
+      <p>React does not ship with a buildt in router, so you need to install one by your self, if needed</p>
+      
+      <p>
+        Facebooks react-pages includes a page, <a href="https://reactjs.org/community/routing.html">Routing</a> that
+        list a number of available Router libraries, and these are not the only ones out there.
+      <p/>
+      <p style="font-size:36;color: steelblue;font-style: italic;">So which one should I pick?</p>
+
+    </article>
+  </slide>
+  <slide>
+    <hgroup>
+      <h2>Client-side Routing and React 2</h2>
+    </hgroup>
+    <article>
+      <p>Whenever you pick at library to include, it's important to chech whether its future-proof (still being) 
+        developed, Safe, and also for more complex libraries, whether it include reasonable documentation
+      </p>
+      <p>
+        The simplest way to check this is via the npm-repository. </br>
+        A quick check on on all the router libraries given above reveals many of them have open issues and have had
+        no commits for several years, and only have a few 100 our less weekly downloads.</br>
+        These two seems to be the most widely used with more than a million weekly downloads for the first,
+         and <b>2.5 millions</b> downloads for the second.
+        <ul>
+          <li><a href="https://www.npmjs.com/package/@reach/router">Reach Router</a></li>
+          <li><a href="https://www.npmjs.com/package/react-router">React Router</a></li>
+        </ul>
+        <p>We have decided for React Router, since its very actively maintained, is updated with 
+           <b>React Hooks</b> and actually the two listed above are 
+           <a href="https://reacttraining.com/blog/reach-react-router-future/">being merged together</a> to one 100% Hook
+           based Router API which seems very promissing for the future
+        </p>
+      </p>
+
+    </article>
+  </slide>
+  <slide>
+    <hgroup>
+      <h2>React Router V5</h2>
     </hgroup>
     <article>
       <div style="margin-top: -25px;">
@@ -135,16 +176,16 @@
             <p><a href="https://reacttraining.com/react-router/web/guides/philosophy">React Router</a> is a complete
               routing library for React</p>
             <p>Routing used to be a "not simple" thing with most SPA frameworks like Angular, Ember
-              and also previous versions of React-routers. React Router V4 seems to be the simplest router (yet) to
+              and also previous versions of React-routers. React Router V5 seems to be the simplest router (yet) to
               use </p>
             <p>Dynamic Routing</p>
             <ul>
-              <li>React Router V4 uses a new concept "Dynamic Routing</li>
+              <li>React Router V5 uses a new concept "Dynamic Routing</li>
               <li>This means routing that takes place as <em>your app is rendering</em>,
                 <b>not</b> in a configuration or convention outside of a running app.
               </li>
               <li>What is also mean is: that <em>almost everything is a component in React Router</em></li>
-              <li>Witt this strategy <em>nested routes</em> becomes as simple as <em>How do you nest a <code>div</code></em>
+              <li>Withthis strategy <em>nested routes</em> becomes as simple as <em>How do you nest a <code>div</code></em>
               </li>
 
             </ul>
@@ -165,21 +206,22 @@
     </hgroup>
     <article>
       <div>
-        <p>Note the following examples uses react-router version 4, which is the version you must use this
+        <p>Note the following examples uses react-router version 5, which is the version you must use this
           semester</p>
 
         <p>Install it like this (in a terminal, in you project root):<br/><br/>
           <code>npm install react-router-dom --save</code></p>
-        <p style="color:darkblue">Make sure you refer to the right version, when searching for help</p>
+        <p style="color:darkblue">Make sure you refer to the right version, when searching for help, 
+          older versions without <b>Hooks</b> support are much "trickier" to use</p>
         <br/>
         <ul>
-          <li><a href="https://reacttraining.com/react-router/webs">Help and Examples </a></li>
+          <li><a href="https://reacttraining.com/react-router/web/guides/quick-start">Help and Examples </a></li>
         </ul>
       </div>
     </article>
   </slide>
 
-  <script>
+  <!-- <script>
     $(document).ready(function () {
       $("#view").exPresenter({
         directory: "example1/",
@@ -205,7 +247,7 @@
         <a href="/reactrouter1">Watch in a separate tab</a> (to see URL-changes in the address-bar)
       </div>
     </article>
-  </slide>
+  </slide> -->
 
   <!--
     <script>
@@ -241,7 +283,7 @@
       </article>
     </slide>
   -->
-  <slide>
+  <!-- <slide>
     <hgroup>
       <h2>Exercise 1</h2>
     </hgroup>
@@ -323,7 +365,7 @@
         <img src="../images/Demo.png">
       </div>
     </article>
-  </slide>
+  </slide> -->
 
   <slide>
     <hgroup>
@@ -398,8 +440,7 @@
         </div>
 
         <br/>
-        <p>You might wan't to complete the <a href="https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf">
-          A Simple React Router v4 Tutorial</a> one more time, to call yourself a React-Router Expert ;-)</p>
+      
       </div>
 
     </article>
