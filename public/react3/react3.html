@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.13/angular.min.js"></script>-->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" media="all" href="../theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="../theme/css/phone.css">
+
+  <script src="code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="../js/jquery-1.11.1.min.js"></script>
+  <script src="../js/presenter.js"></script>
+
+  <base target="_blank">
+  <style>
+    code {
+      color: darkblue;
+    }
+  </style>
+
+  <!-- This opens all links in a new tab. -->
+  <script data-main="../js/slides" src="../js/require-1.0.8.min.js"></script>
+
+  <!--In order to have more than one slideset in the project-->
+  <script src="slides.js"></script>
+
+</head>
+
+<!--Setup Angular for the full slide-set-->
+<!--<body ng-app="SlideApp" style="opacity: 0">-->
+
+<body style="opacity: 0">
+
+  <slides class="layout-widescreen">
+
+    <slide class="title-slide segue nobackground" style="background: #00163B">
+      <aside class="gdbar"><img src="../images/logo.png" style="width: 200px;"></aside>
+      <hgroup class="auto-fadein" style="color: white;">
+        <div style="float: left;">
+          <h1 data-config-title></h1>
+          <h2 data-config-subtitle></h2>
+          <p data-config-presenter></p>
+        </div>
+        <div style="float:left;margin-left: 5em;"><img src="images/React-JS.png" style="float:left;width: 200px;">
+        </div>
+      </hgroup>
+    </slide>
+
+    
+
+   
+    <slide>
+      <hgroup>
+        <h2>Lists</h2>
+        <h3>Chaining <code>map</code> and <code>filter</code></h3>
+      </hgroup>
+      <article>
+        <div style="margin-top: -20px;">
+        </div>
+        <div>
+          <div id="table2"></div>
+        </div>
+      </article>
+    </slide>
+
+
+    <slide>
+      <hgroup>
+        <h2><a href="https://facebook.github.io/react/docs/forms.html#controlled-components">React Forms</a></h2>
+      </hgroup>
+      <article>
+        <div style="margin-top: -25px;">
+          <p>HTML form elements work a bit differently from other DOM elements in React,
+            because form elements such as <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code>
+            typically maintain their own state and update it based on user input.</p>
+          <p>
+            In React, mutable state is typically kept in the state property of components, and only updated with <code>setState()</code>.
+          </p>
+        </div>
+        <div class="build">
+          <div>
+            <p>
+              React suggests we combine the two by making the React state be the</p>
+            <div style="text-align: center; font-size: larger; color: #2a6496">"single source of truth"</div>
+          </div>
+          <div>
+            <br />
+            <p>
+              Then the React component that renders a form also controls what happens in that form on subsequent user
+              input.</p>
+            <p>An input form element whose value is controlled by React in this way is called a:</p>
+            <div style="text-align: center; font-size: larger; color: #2a6496">"controlled component"</div>
+          </div>
+        </div>
+      </article>
+    </slide>
+
+
+    <script>
+      $(document).ready(function () {
+        $("#form1").exPresenter({
+          directory: "examples/form/",
+          codeClass: "prettyprint pre16",
+          codeStyle: "float:left;margin-right:5px;margin-bottom:5px;width:60%;min-height: 300px;background-color:white;",
+          presenterStyle: "float:right;width:38%;height: 130px;margin-bottom:15px;",
+          commentStyle: "float:right;width:38%;font-size:20px;"
+        });
+      });
+    </script>
+
+    <slide>
+      <hgroup>
+        <h2>React Forms</h2>
+      </hgroup>
+      <article>
+        <div style="font-size: 0.8em;margin-top: -30px;">
+          <p><b>How to make Controlled Components</b></p>
+          <p>
+
+          </p>
+
+        </div>
+        <div>
+          <div id="form1"></div>
+        </div>
+      </article>
+    </slide>
+
+    <script>
+      $(document).ready(function () {
+        $("#form2").exPresenter({
+          directory: "examples/form2/",
+          codeClass: "prettyprint pre16",
+          codeStyle: "float:left;margin-right:5px;margin-bottom:5px;width:70%;min-height: 300px;background-color:white;",
+          presenterStyle: "float:right;width:28%;height: 200px;margin-bottom:15px;",
+          commentStyle: "float:right;width:28%;font-size:20px;"
+        });
+      });
+    </script>
+
+    <slide>
+      <hgroup>
+        <h2>React Forms</h2>
+      </hgroup>
+      <article>
+        <div style="font-size: 0.8em;margin-top: -30px;">
+          <p><b>Forms with multiple inputs</b></p>
+          <p>
+
+          </p>
+
+        </div>
+        <div>
+          <div id="form2"></div>
+        </div>
+      </article>
+    </slide>
+
+    <!-- <script>
+    $(document).ready(function () {
+      $("#tictactoe").exPresenter({
+        directory: "examples/tictactoe/",
+        codeClass: "pre16",
+        codeStyle: "float:left;overflow: auto;margin-right:5px;margin-bottom:5px;width:70%;height:400px;background-color:white;",
+        presenterStyle: "float:right;width:28%;height: 300px;margin-bottom:15px;",
+        commentStyle: "float:right;width:28%;font-size:20px;"
+      });
+    });
+  </script> -->
+
+    <slide>
+      <hgroup>
+        <h2>Events with React</h2>
+      </hgroup>
+      <article>
+        <p style="margin-top:-25px;">React implements it's own Event System which includes a SyntheticEvent wrapper</p>
+        <p>Your event handlers will be passed instances of <em>SyntheticEvent</em>, a <b>cross-browser wrapper</b>
+          around the browser’s native event.
+          It has the <em>same interface</em> as the browser’s native event, including stopPropagation() and
+          preventDefault(),
+          except the events <span style="font-size: 120%;color:slateblue">work identically across all browsers</span>.</p>
+        <p style="font-size: 80%">Because SyntheticEvens implement the same interface, usage is almost as what your
+          used to</p>
+        <div class="row">
+          <p style="margin:2px;margin-left:1em;">In React</p>
+          <div class="col-md-7">
+            <pre class="prettyprint pre16">
+function ActionLink() {
+  function handleClick(e) {
+    e.preventDefault();
+    console.log('The link was clicked.');
+  }           
+  return (
+    //what do you get in JS when using a 
+    //function name without <b>() ?</b>
+     &lt;a href=&quot;#&quot; onClick={handleClick}&gt;
+        Click me
+    &lt;/a&gt;
+  );
+}  </pre>
+          </div>
+          <div class="col-md-5">
+            <p style="margin-left:1em;">In plain HTML</p>
+            <pre class="prettyprint pre16">
+&lt;a href=&quot;#&quot; onclick=&quot;ActionLink()&quot;&gt;
+  Click me
+&lt;/a&gt;</pre>
+          </div>
+        </div>
+
+      </article>
+    </slide>
+    <slide>
+      <hgroup>
+        <h2>React Events in ES6-classes</h2>
+      </hgroup>
+      <article>
+        <div style="margin-top: -15px;">
+          <p>When you define a component using an ES6 class, a common pattern is for an event handler to be a method on
+            the class</p>
+          <p>You have to be careful about the meaning of this in JSX callbacks. In JavaScript, class methods are not
+            bound by default.
+            If you forget to bind this.handleClick and pass it to onClick, this will be undefined when the function is
+            actually called.</p>
+          <div class="row">
+            <div class="col-md-7">
+              <pre class="prettyprint pre16">class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    //This binding is necessary to make `this`
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    console.log(&quot;I was Clicked&quot;);
+  }
+  render() {
+    return (
+      &lt;button onClick={this.handleClick}&gt;
+        Click Me
+      &lt;/button&gt;
+    );
+  }
+} </pre>
+            </div>
+            <div class="col-md-5">
+              <p>If calling bind annoys you, there are ways around it in ES.NEXT, which we can use in a <em>create-react-app</em>
+                project, thanks to
+                Babel and Webpack </p>
+
+              <p><a href="https://reactjs.org/docs/handling-events.html">Read more about that here</a></p>
+              <p>Right now, lets show it on <a href="https://codepen.io/gaearon/pen/xEmzGg?editors=0010">Codepen</a></p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </slide>
+    <slide>
+      <hgroup>
+        <h2>Lifting State UP</h2>
+      </hgroup>
+      <article>
+        <div style="margin-top:-15px;">
+          <div class="row">
+            <div class="col-md-6">
+              <br /><br />
+              Recomended unidirectional dataflow in React
+            </div>
+            <div class="col-md-6">
+              <img src="images/dataFlowInReact.png" style="width: 90%">
+            </div>
+
+          </div>
+
+          <div class="row build">
+            <div>
+            <hr />
+            <div class="col-md-7">
+              <p>
+                Often, several components need to reflect the same changing data.<br />
+                Facebook recommends lifting the shared state up to their closest common ancestor.</p>
+
+              <p>There should be a single “source of truth” for any data that changes in a React application.</p>
+
+            </div>
+            <div class="col-md-5">
+              <img src="images/liftStateUp.png" style="width: 80%;margin-left:50px;">
+            </div>
+          </div>
+</div>
+
+        </div>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Lifting State UP</h2>
+        <h3><a href="https://github.com/cphdat3sem2019spring/LiftingState">Clone</a> and use this example for future reference</h3>
+      </hgroup>
+      <article>
+        <div style="margin-top:-35px; 
+        overflow: hidden;
+        padding-top: 56.25%;
+        position: relative;">
+          <iframe src="https://lifting-state.netlify.com" style="border: 0;
+          height: 100%;
+          left: 0;
+          margin-left: -100px;
+          position: absolute;
+          top: 0;
+          width: 120%;"></iframe>
+        </div>
+      </article>
+
+    </slide>
+    <slide>
+      <hgroup>
+        <h2>Lifting State UP</h2>
+        <h3>Use this example (continues on next slide) as a template for this problem</h3>
+      </hgroup>
+      <article>
+        <div style="margin-top:-35px;">
+          <img style="width:80%;margin-left:50px;" src="images/liftingState.PNG" />
+          <p style="font-style: italic;font-size: 0.9em;color:steelblue;margin-top:25px;">
+            We suggest, to solve a problem that React doesn't solve, the use of Data Stores (or factories when a
+            backend is involved)
+            as in this example.<br />Feel free to go with a single Store/factory (Single Source of Truth) or many.</p>
+        </div>
+      </article>
+    </slide>
+
+    <script>
+      $(document).ready(function () {
+        $("#lifting_state").exPresenter({
+          directory: "examples/lifting_state/",
+          codeClass: "prettyprint pre16",
+          codeStyle: "float:left;margin-right:5px;margin-bottom:5px;width:67%;min-height: 300px;background-color:white;",
+          presenterStyle: "float:right;width:30%;height: 500px;margin-bottom:15px;",
+          commentStyle: "float:right;width:30%;font-size:20px;",
+          imageStyle: "width: 100%;margin-top:40px;margin-left:-5px;",
+          imageTitle: "Architecture"
+        });
+      });
+    </script>
+
+    <slide>
+      <hgroup>
+        <h2>Lifting State UP</h2>
+      </hgroup>
+      <article>
+        <div style="margin-top:-25px;">
+          <div id="lifting_state"></div>
+        </div>
+      </article>
+    </slide>
+    <!--
+  <slide>
+    <hgroup>
+      <h2>Events with React</h2>
+    </hgroup>
+    <article>
+      <div style="margin-top: -20px;">
+        <p>
+          We will use React's tic-tac-toe example as an introduction to event handling
+        </p>
+      </div>
+      <div>
+        <div id="tictactoe"></div>
+      </div>
+    </article>
+  </slide>
+
+
+  <script>
+    $(document).ready(function () {
+      $("#tictac2").exPresenter({
+        directory: "examples/tictactoe_engine/",
+        codeClass: "pre16",
+        codeStyle: "float:left;overflow: auto;margin-right:5px;margin-bottom:5px;width:70%;height:400px;background-color:white;",
+        presenterStyle: "float:right;width:28%;height: 300px;margin-bottom:15px;",
+        commentStyle: "float:right;width:28%;font-size:20px;"
+      });
+    });
+  </script>
+
+  <slide>
+    <hgroup>
+      <h2>Events with React 2</h2>
+      <h3>Simplify event handling with stores/factories/engines</h3>
+    </hgroup>
+    <article>
+      <div style="margin-top: -30px;font-size: 0.8em;">
+        <p>
+          Isolating data/business-logic in separate stores (or as for this example, a GameEngine) is something missing
+          in much to much "simpler" React examples
+        </p>
+        <p>This is what i always recommend, even if you don't use Redux, Flux or MobX, and don't worry about doing
+          <code>this.forceUpdate()</code></p>
+      </div>
+      <div>
+        <div id="tictac2"></div>
+      </div>
+    </article>
+  </slide>
+
+  <script>
+    $(document).ready(function () {
+      $("#children").exPresenter({
+        directory: "examples/children/",
+        codeClass: "pre16",
+        codeStyle: "float:left;margin-right:5px;margin-bottom:5px;width:60%;min-height: 300px;background-color:white;",
+        presenterStyle: "float:right;width:38%;height: 200px;margin-bottom:15px;",
+        commentStyle: "float:right;width:38%;font-size:20px;"
+      });
+    });
+  </script>
+  -->
+    <slide>
+      <hgroup>
+        <h2>Children</h2>
+      </hgroup>
+      <article>
+        <div style="margin-top: -20px;">
+          <p>
+            In JSX, expressions that contain both an opening tag and a closing tag, the content between those tags is
+            passed as a
+            special prop: <code>props.children</code>
+          </p>
+        </div>
+        <div>
+          <div id="children"></div>
+        </div>
+      </article>
+    </slide>
+
+
+    <slide class="backdrop"></slide>
+
+  </slides>
+
+  <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+  <!--[if IE]>
+<script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+<script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "JSX",
+  "files": [
+    {"fileName":"App.js","title":"JSX",
+      "include": {"start": "//Start","end": "//End"}
+    },
+    {"fileName":"App.js","title":"Rendering the JSX",
+      "include": {"start": "//Render the JSX declared in element","end": "//Render End"}
+    }
+
+  ],
+  "filesOnlyForPlunkr": [
+    "index.html",
+    "App.js"
+  ],
+  "showThisAlways": "index.html",
+  "usePlunk": "true",
+  "tags": ["React"],
+  "description": "React"
+
+}

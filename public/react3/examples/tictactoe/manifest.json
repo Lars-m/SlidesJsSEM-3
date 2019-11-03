@@ -1,0 +1,16 @@
+{
+  "name": "tictactoe",
+  "files": [
+    {"fileName":"index.js","title":"Tic Tac Toe"}
+  ],
+  "filesOnlyForPlunkr": [
+    "index.html",
+    "index.js",
+    "index.css"
+  ],
+  "showThisAlways": "index.html",
+  "usePlunk": "true",
+  "tags": ["React"],
+  "description": "React"
+
+}

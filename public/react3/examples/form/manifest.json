@@ -1,0 +1,21 @@
+{
+  "name": "Form1",
+  "files": [
+    {"fileName":"App.js","title":"Controlled Components",
+      "include": {"start": "//Start","end": "//End"}
+    },
+    {"fileName":"App.js","title":"Rendering",
+      "include": {"start": "//Render start","end": "//Render end"}
+    }
+
+  ],
+  "filesOnlyForPlunkr": [
+    "index.html",
+    "App.js"
+  ],
+  "showThisAlways": "index.html",
+  "usePlunk": "true",
+  "tags": ["React"],
+  "description": "React"
+
+}

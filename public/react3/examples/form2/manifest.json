@@ -1,0 +1,24 @@
+{
+  "name": "Form2",
+  "files": [
+    {"fileName":"App.js","title":"Initial state",
+      "include": {"start": "//constructor start","end": "//constructor end"}
+    },
+    {"fileName":"App.js","title":"Handlers",
+      "include": {"start": "//handlers start","end": "//handlers end"}
+    },
+    {"fileName":"App.js","title":"Render with Form",
+      "include": {"start": "//form start","end": "//form end"}
+    }
+
+  ],
+  "filesOnlyForPlunkr": [
+    "index.html",
+    "App.js"
+  ],
+  "showThisAlways": "index.html",
+  "usePlunk": "true",
+  "tags": ["React"],
+  "description": "React"
+
+}

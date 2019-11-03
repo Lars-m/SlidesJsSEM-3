@@ -1,0 +1,28 @@
+{
+    "name": "LiftingState",
+    "files": [
+      {"fileName":"App.js","title":"App.js",
+        "include": {"start": "//App start","end": "//App end"}
+      },
+      {"fileName":"App.js","title":"AllTodos.js",
+        "include": {"start": "//AllTodos start","end": "//AllTodos end"}
+      },
+      {"fileName":"App.js","title":"AddTodo.js",
+        "include": {"start": "//AddTodo start","end": "//AddTodo end"}
+      },
+      {"fileName":"App.js","title":"todoStore.js",
+        "include": {"start": "//TodoStore start","end": "//TodoStore end"}
+      },
+      {"fileName":"../../images/liftingState.PNG","title":"afldkas"}
+  
+    ],
+    "filesOnlyForPlunkr": [
+      "index.html",
+      "App.js"
+    ],
+    "showThisAlways": "index.html",
+    "usePlunk": "true",
+    "tags": ["React", "state","lifting_state"],
+    "description": "React - state - props - lifting state"
+  
+  }

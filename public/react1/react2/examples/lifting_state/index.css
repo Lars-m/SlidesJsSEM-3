@@ -1,0 +1,39 @@
+body {
+    margin: 20;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  
+  .container { 
+    width: 900px;
+    margin:50px;
+    padding:10px;
+    background-color: lightgray;
+    border: solid steelblue 1pt;
+    border-radius: 5px;
+  }
+  
+  .col1 {
+    float: left;
+    border: solid lightgray 2pt;
+    background-color: yellow;
+    border-radius: 5px;
+    width: 45%;
+    padding: 10px;
+    margin-right:10px;
+  }
+  .col2 {
+    float: left;
+    border: solid lightgray 2pt;
+    color: red;
+    background-color:   red;
+    border-radius: 5px;
+    width: 45%;
+    padding: 10px;
+    margin-right:10px;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
